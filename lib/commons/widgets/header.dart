@@ -42,8 +42,9 @@ class Header extends StatelessWidget {
                 child: const Text(
                   "Login",
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
