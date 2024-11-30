@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce_web_app/common/utils/extensions.dart';
+import 'package:ecommerce_web_app/commons/utils/extensions.dart';
 
 class CommonTextField extends StatelessWidget {
   const CommonTextField({
