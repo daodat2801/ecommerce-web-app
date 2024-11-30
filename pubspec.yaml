@@ -19,7 +19,16 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  build_runner:  
 
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/data/
+    - assets/images/
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/sample.ttf
+          style: italic
