@@ -6,6 +6,7 @@ class FooterSubscribe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+      // Chuyển FooterSubscribe thành Expanded
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
@@ -23,6 +24,7 @@ class FooterSubscribe extends StatelessWidget {
             Row(
               children: [
                 Expanded(
+                  // Chuyển TextField thành Expanded
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "Your Email",

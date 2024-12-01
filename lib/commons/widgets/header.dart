@@ -7,13 +7,14 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 20),
-      // decoration: BoxDecoration(
-      //   color: Colors.white,
-      //   border: Border(
-      //     bottom: BorderSide(color: Colors.grey[300]!, width: 1),
-      //   ),
-      // ),
+      padding: const EdgeInsets.symmetric(
+          horizontal: 20, vertical: 20), // Giảm padding bên trong container
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          bottom: BorderSide(color: Colors.grey[300]!, width: 1),
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,14 +27,16 @@ class Header extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              HeaderMenuItem(title: "Home"),
-              HeaderMenuItem(title: "Product"),
-              HeaderMenuItem(title: "Pricing"),
-              HeaderMenuItem(title: "Contact"),
-            ],
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                HeaderMenuItem(title: "Home"),
+                HeaderMenuItem(title: "Product"),
+                HeaderMenuItem(title: "Pricing"),
+                HeaderMenuItem(title: "Contact"),
+              ],
+            ),
           ),
           Row(
             children: [
@@ -42,9 +45,8 @@ class Header extends StatelessWidget {
                 child: const Text(
                   "Login",
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: Colors.black,
                     fontSize: 16,
-                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -57,7 +59,7 @@ class Header extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 28, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 ),
                 child: const Row(
                   children: [
@@ -65,7 +67,7 @@ class Header extends StatelessWidget {
                       "Become a member",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
-                    SizedBox(width: 15),
+                    SizedBox(width: 5),
                     Icon(Icons.arrow_forward, color: Colors.white, size: 16),
                   ],
                 ),
