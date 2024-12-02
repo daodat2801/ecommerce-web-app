@@ -1,8 +1,7 @@
-import 'package:ecommerce_web_app/data/user_repository.dart';
-import 'package:ecommerce_web_app/pages/login/login_screen_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'commons/constants/app_color.dart';
 
 void main() {
   runApp(const ProviderScope(child: MainApp()));
@@ -13,12 +12,22 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
+      ),
+      home: const Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Text(
+            'Hello World!',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 20,
+              color: AppColors.textSecondaryColor
+            ),
+          ),
         ),
       ),
     );
