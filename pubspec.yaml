@@ -34,3 +34,7 @@ flutter:
       fonts:
         - asset: assets/fonts/Roboto-Black.ttf
           style: italic
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 400
