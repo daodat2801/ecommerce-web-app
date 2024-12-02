@@ -1,0 +1,142 @@
+{
+  "page": {
+    "title": "Bandage Product",
+    "sections": [
+      {
+        "type": "header",
+        "elements": [
+          {
+            "type": "logo",
+            "text": "Bandage"
+          },
+          {
+            "type": "navigation",
+            "links": [
+              { "text": "Home", "url": "#" },
+              { "text": "Product", "url": "#" },
+              { "text": "Pricing", "url": "#" },
+              { "text": "Contact", "url": "#" }
+            ]
+          },
+          {
+            "type": "auth",
+            "links": [
+              { "text": "Login", "url": "#" },
+              { "text": "Become a member", "url": "#" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "elements": [
+          {
+            "type": "product",
+            "name": "Floating Phone",
+            "price": 1139.33,
+            "currency": "$",
+            "rating": 4,
+            "reviewsCount": 10,
+            "availability": "In Stock",
+            "colors": ["Black", "White", "Blue", "Red"],
+            "sections": [
+              {
+                "type": "description",
+                "title": "Product Description",
+                "content": "We know how large objects will act, but things on a small scale."
+              },
+              {
+                "type": "additional_info",
+                "title": "Additional Information",
+                "content": "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent."
+              },
+              {
+                "type": "reviews",
+                "title": "Reviews",
+                "content": [
+                  {
+                    "user": "John Doe",
+                    "rating": 4,
+                    "comment": "Great product!"
+                  },
+                  {
+                    "user": "Jane Smith",
+                    "rating": 5,
+                    "comment": "Absolutely love it!"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "bestseller_products",
+            "title": "Bestseller Products",
+            "products": [
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product1.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product2.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product3.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product4.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "sections": [
+          {
+            "title": "Company Info",
+            "links": ["About Us", "Jobs", "Press", "Blog"]
+          },
+          {
+            "title": "Legal",
+            "links": ["Terms of Service", "Privacy Policy"]
+          },
+          {
+            "title": "Features",
+            "links": ["Business Marketing", "User Analytic", "Live Chat"]
+          },
+          {
+            "title": "Resources",
+            "links": ["IOS & Android", "Watch a Demo", "Customers"]
+          },
+          {
+            "title": "Get In Touch",
+            "links": ["Contact Us", "FAQ", "Support"]
+          },
+          {
+            "title": "Newsletter",
+            "form": {
+              "placeholder": "Enter your email",
+              "button": "Subscribe"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+

@@ -27,7 +27,7 @@ class _ProductItemState extends State<ProductItem> {
     return Column(
       children: [
         Image.asset(
-          "${AppImag.pathProduct}/${widget.image}",
+          "${AppImage.pathProduct}/${widget.image}",
           width: 200,
           fit: BoxFit.scaleDown,
         ),
