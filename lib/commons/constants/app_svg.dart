@@ -41,4 +41,8 @@ class AppSvgs {
   static const String icHeart = 'assets/icons/ic_heart.svg';
   static const String icFbBlue = 'assets/icons/ic_fb_blue.svg';
   static const String icCart = 'assets/icons/ic_cart.svg';
+  static const String icFbTrial = 'assets/icons/ic_fb_trial.svg';
+  static const String icIgTrial = 'assets/icons/ic_ig_trial.svg';
+  static const String icLknTrial = 'assets/icons/ic_linkIn_trial.svg';
+  
 }
