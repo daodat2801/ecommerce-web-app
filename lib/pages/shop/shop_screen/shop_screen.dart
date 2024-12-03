@@ -1,6 +1,8 @@
 import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:ecommerce_web_app/commons/widgets/footer.dart';
+import 'package:ecommerce_web_app/commons/widgets/header.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_item_product.dart';
 import 'package:ecommerce_web_app/pages/shop/shop_screen/widget_brand_list.dart';
 import 'package:ecommerce_web_app/pages/shop/shop_screen/widget_category_list.dart';
@@ -23,6 +25,7 @@ class ShopScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const Header(isExpanded: true),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 195, vertical: 24),
               child: Row(
@@ -149,6 +152,7 @@ class ShopScreen extends ConsumerWidget {
             const PageButton(),
             const SizedBox(height: 48),
             const BrandList(),
+            const Footer(),
           ],
         ),
       ),
