@@ -2,6 +2,7 @@ import 'package:ecommerce_web_app/commons/widgets/footer.dart';
 import 'package:ecommerce_web_app/commons/widgets/header.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_brand_list.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/best_seller_products_section.dart';
+import 'package:ecommerce_web_app/pages/product_detail/widgets/display_current_page.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/product_description_section.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/product_info_section.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class ProductDetailScreen extends StatelessWidget {
         child: const Column(
           children: [
             Header(isExpanded: true),
+            DisplayCurrentPage(),
             ProductInfoSection(),
             ProductDescriptionSection(),
             BestSellerProductsSection(),

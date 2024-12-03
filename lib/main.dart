@@ -11,10 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
+      ),
+      home: const Scaffold(
         body: Center(
           child: Text('Hello World!'),
         ),
