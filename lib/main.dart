@@ -1,3 +1,6 @@
+import 'package:ecommerce_web_app/commons/widgets/header.dart';
+import 'package:ecommerce_web_app/commons/widgets/product_search_bar.dart';
+import 'package:ecommerce_web_app/pages/home/widgets/category_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +22,7 @@ class MainApp extends StatelessWidget {
       ),
       home: const Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Header(isExpanded: true,),
         ),
       ),
     );

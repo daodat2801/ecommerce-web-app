@@ -1,4 +1,5 @@
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
+import 'package:ecommerce_web_app/commons/widgets/product_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -128,7 +129,7 @@ class Header extends StatelessWidget {
               if (isExpanded) ...[
                 Row(
                   children: [
-                    SvgPicture.asset(AppSvgs.icSearch,height: 16,width: 16 ),
+                    const ProductSearchBar(),
                     const SizedBox(width: 15),
                     SvgPicture.asset(AppSvgs.icCart,height: 16,width: 16 ),
                     const SizedBox(width: 5),
