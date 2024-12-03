@@ -31,7 +31,6 @@ class Header extends StatelessWidget {
                     const Text(
                       "(225) 555-0118",
                       style: TextStyle(
-                        // #FFFFFF
                         color: Color(0xFFFFFFFF),
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
@@ -60,7 +59,6 @@ class Header extends StatelessWidget {
                     const Text(
                       "Follow Us  and get a chance to win 80% off",
                       style: TextStyle(
-                        // #FFFFFF
                         color: Color(0xFFFFFFFF),
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
