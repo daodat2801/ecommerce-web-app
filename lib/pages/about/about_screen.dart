@@ -17,7 +17,7 @@ class AboutScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Header(isExpanded: true),
+            Header(isExpanded: false),
             AboutUsSection(),
             StatisticsSection(),
             VideoSection(),

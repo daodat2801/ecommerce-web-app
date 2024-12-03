@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_color.dart';
+
 class FooterSubscribe extends StatelessWidget {
   const FooterSubscribe({super.key});
 
@@ -16,7 +18,7 @@ class FooterSubscribe extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
-                color: Color(0xFF252B42),
+                color: AppColors.textPrimaryColor,
               ),
             ),
             const SizedBox(height: 20),
@@ -27,7 +29,7 @@ class FooterSubscribe extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: "Your Email",
                       hintStyle: TextStyle(
-                        color: Color(0xFF737373),
+                        color: AppColors.textSecondaryColor3,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -46,7 +48,7 @@ class FooterSubscribe extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.primaryColor,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(3),
@@ -60,7 +62,7 @@ class FooterSubscribe extends StatelessWidget {
                     "Subscribe",
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white,
+                      color: AppColors.white,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -72,7 +74,7 @@ class FooterSubscribe extends StatelessWidget {
               "Lorem imp sum dolor Amit",
               style: TextStyle(
                 fontSize: 12,
-                color: Color(0xFF737373),
+                color: AppColors.textSecondaryColor3,
                 fontWeight: FontWeight.w400,
               ),
             ),

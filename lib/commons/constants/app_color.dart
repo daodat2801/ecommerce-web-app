@@ -4,7 +4,7 @@ class AppColors {
   static const Color primaryColor = Color(0xFF23A6F0);
   static const Color secondaryColor = Color(0xFF03DAC6);
   static const Color backgroundColor = Color(0xFFF5F5F5);
-  static const Color white = Color(0xFFF5FFFF);
+  static const Color white = Color(0xFFFFFFFF);
   static const Color white200 = Color(0xFFF3F3F3);
   static const Color white300 = Color(0xFFFAFAFA);
   static const Color radiusColor = Color(0xFFECECEC);
@@ -34,4 +34,5 @@ class AppColors {
   static const Color textNumber = Color(0xff23856d);
   static const Color colorCircle = Color(0xffe77c40);
   static const Color secondaryBackgroundColor = Color(0xfffafafa);
+  static const Color divider = Color(0xffe6e6e6);
 }

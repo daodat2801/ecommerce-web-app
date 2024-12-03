@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_color.dart';
+
 class HeaderMenuItem extends StatelessWidget {
   final String title;
   const HeaderMenuItem({super.key, required this.title});
@@ -14,7 +16,7 @@ class HeaderMenuItem extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 14,
-            color: Color(0xFF737373),
+            color: AppColors.textSecondaryColor3,
             fontWeight: FontWeight.w700,
           ),
         ),

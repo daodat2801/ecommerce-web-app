@@ -46,7 +46,7 @@ class ShopScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(width: 10),
-                  SvgPicture.asset(AppSvgs.icRowRight, width: 9, height: 16),
+                  SvgPicture.asset(AppSvgs.icArrowRight, width: 9, height: 16),
                   const SizedBox(width: 10),
                   const Text(
                     "Shop",
@@ -122,7 +122,7 @@ class ShopScreen extends ConsumerWidget {
                                   color: AppColors.textSecondaryColor3, fontSize: 14),
                             ),
                             const SizedBox(width: 10),
-                            SvgPicture.asset(AppSvgs.icRowDown, width: 14),
+                            SvgPicture.asset(AppSvgs.icArrowDown, width: 14),
                           ],
                         ),
                       ),
