@@ -1,10 +1,11 @@
+import 'package:ecommerce_web_app/data/product_repository.dart';
 import 'package:ecommerce_web_app/data/user_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../models/shop_model.dart';
 
 class ShopScreenViewModel extends StateNotifier<ShopState> {
-  final UserRepository _repository = UserRepository();
+  final ProductRepository _repository = ProductRepository();
 
   ShopScreenViewModel() : super(ShopState.initial()) {
     fetchProducts();

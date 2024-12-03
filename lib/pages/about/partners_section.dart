@@ -1,3 +1,4 @@
+import 'package:ecommerce_web_app/commons/widgets/widget_brand_list.dart';
 import 'package:flutter/material.dart';
 
 class PartnersSection extends StatelessWidget {
@@ -8,9 +9,9 @@ class PartnersSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
       color: const Color(0xFFFAFAFA),
-      child: Column(
+      child: const Column(
         children: [
-          const Text(
+          Text(
             "Big Companies Are Here",
             style: TextStyle(
               fontSize: 40,
@@ -19,8 +20,8 @@ class PartnersSection extends StatelessWidget {
               color: Color(0xFF252B42),
             ),
           ),
-          const SizedBox(height: 30),
-          const Text(
+          SizedBox(height: 30),
+          Text(
             "Problems trying to resolve the conflict between \nthe two major realms of Classical physics: Newtonian mechanics ",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -29,20 +30,8 @@ class PartnersSection extends StatelessWidget {
               color: Color(0xFF737373),
             ),
           ),
-          const SizedBox(height: 50),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 25,
-            runSpacing: 100,
-            children: [
-              Image.asset("assets/icons/fa_brand_1.png", height: 100),
-              Image.asset("assets/icons/fa_brand_2.png", height: 100),
-              Image.asset("assets/icons/fa_brand_3.png", height: 100),
-              Image.asset("assets/icons/fa_brand_4.png", height: 100),
-              Image.asset("assets/icons/fa_brand_5.png", height: 100),
-              Image.asset("assets/icons/fa_brand_6.png", height: 100),
-            ],
-          ),
+          SizedBox(height: 50),
+          BrandList(),
         ],
       ),
     );

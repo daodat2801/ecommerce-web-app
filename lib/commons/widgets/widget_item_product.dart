@@ -2,14 +2,14 @@ import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:flutter/material.dart';
 
-class ItemProduct extends StatefulWidget {
+class ProductItem extends StatefulWidget {
   final String? name;
   final String? department;
   final String? originalPrice;
   final String? discountedPrice;
   final String? image;
 
-  const ItemProduct(
+  const ProductItem(
       {super.key,
       required this.name,
       required this.department,
@@ -18,10 +18,10 @@ class ItemProduct extends StatefulWidget {
       required this.image});
 
   @override
-  State<ItemProduct> createState() => _ItemProductState();
+  State<ProductItem> createState() => _ProductItemState();
 }
 
-class _ItemProductState extends State<ItemProduct> {
+class _ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
     return Column(

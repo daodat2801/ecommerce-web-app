@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       home: const Scaffold(
-        body: Center(child: ShopScreen()),
+        body: Center(child: AboutScreen()),
       ),
     );
   }
