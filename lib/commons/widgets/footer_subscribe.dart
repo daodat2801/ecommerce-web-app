@@ -14,25 +14,29 @@ class FooterSubscribe extends StatelessWidget {
             const Text(
               "Get In Touch",
               style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w700,
                 fontSize: 16,
-                color: Colors.black,
+                color: Color(0xFF252B42),
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 20),
             Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "Your Email",
-                      hintStyle: TextStyle(color: Colors.grey[400]),
+                      hintStyle: TextStyle(
+                        color: Color(0xFF737373),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
                       filled: true,
                       fillColor: Colors.white,
-                      border: const OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(8),
-                          bottomLeft: Radius.circular(8),
+                          topLeft: Radius.circular(3),
+                          bottomLeft: Radius.circular(3),
                         ),
                         borderSide: BorderSide(color: Colors.grey),
                       ),
@@ -45,26 +49,31 @@ class FooterSubscribe extends StatelessWidget {
                     backgroundColor: Colors.blue,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(8),
-                        bottomRight: Radius.circular(8),
+                        topRight: Radius.circular(3),
+                        bottomRight: Radius.circular(3),
                       ),
                     ),
                     padding: const EdgeInsets.symmetric(
-                        vertical: 22, horizontal: 20),
+                        vertical: 22.5, horizontal: 22.5),
                   ),
                   child: const Text(
                     "Subscribe",
-                    style: TextStyle(fontSize: 14, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            Text(
-              "Lorem ipsum dolor sit amet",
+            const Text(
+              "Lorem imp sum dolor Amit",
               style: TextStyle(
                 fontSize: 12,
-                color: Colors.grey[600],
+                color: Color(0xFF737373),
+                fontWeight: FontWeight.w400,
               ),
             ),
           ],

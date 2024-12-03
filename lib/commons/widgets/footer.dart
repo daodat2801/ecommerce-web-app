@@ -8,11 +8,14 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 200),
+      color: const Color(0xFFFFFFFF),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 195),
       child: Column(
         children: [
-          Divider(color: Colors.grey[400], thickness: 1),
+          const Divider(
+            color: Color(0xFFFAFAFA),
+            thickness: 1,
+          ),
           const SizedBox(height: 20),
           const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,15 +53,15 @@ class Footer extends StatelessWidget {
           const SizedBox(height: 30),
           Divider(color: Colors.grey[400], thickness: 1),
           const SizedBox(height: 20),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 "Made With Love By Finland All Rights Reserved",
                 style: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
+                  color: Color(0xFF737373),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],
