@@ -1,0 +1,186 @@
+{
+  "page": {
+    "title": "Bandage Shop",
+    "sections": [
+      {
+        "type": "header",
+        "elements": [
+          {
+            "type": "logo",
+            "text": "Bandage"
+          },
+          {
+            "type": "navigation",
+            "links": [
+              { "text": "Home", "url": "#" },
+              { "text": "Product", "url": "#" },
+              { "text": "Pricing", "url": "#" },
+              { "text": "Contact", "url": "#" }
+            ]
+          },
+          {
+            "type": "auth",
+            "links": [
+              { "text": "Login", "url": "#" },
+              { "text": "Become a member", "url": "#" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "elements": [
+          {
+            "type": "title",
+            "text": "Shop"
+          },
+          {
+            "type": "category",
+            "items": [
+              { "name": "CLOTHS", "count": 5 }
+            ]
+          },
+          {
+            "type": "products",
+            "items": [
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product1.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product2.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product3.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product4.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product5.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product6.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product7.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product8.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product9.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product10.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product11.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "product12.png"
+              }
+            ]
+          },
+          {
+            "type": "filter",
+            "options": [
+              { "text": "Sort by popularity", "value": "popularity" }
+            ]
+          },
+          {
+            "type": "pagination",
+            "controls": [
+              { "text": "Previous", "action": "prev" },
+              { "text": "Next", "action": "next" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "trusted_by",
+        "text": "Trusted By Over 4000 Big Companies",
+        "logos": [
+          "Hooli",
+          "Lyft",
+          "Stripe",
+          "AWS",
+          "Reddit"
+        ]
+      },
+      {
+        "type": "footer",
+        "sections": [
+          {
+            "title": "Company Info",
+            "links": ["About Us", "Jobs", "Press", "Blog"]
+          },
+          {
+            "title": "Legal",
+            "links": ["Terms of Service", "Privacy Policy"]
+          },
+          {
+            "title": "Features",
+            "links": ["Business Marketing", "User Analytic", "Live Chat"]
+          },
+          {
+            "title": "Resources",
+            "links": ["IOS & Android", "Watch a Demo", "Customers"]
+          },
+          {
+            "title": "Get In Touch",
+            "links": ["Contact Us", "FAQ", "Support"]
+          }
+        ]
+      }
+    ]
+  }
+}
+
