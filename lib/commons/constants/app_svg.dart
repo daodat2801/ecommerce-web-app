@@ -16,4 +16,6 @@ class AppSvgs {
   static const String iconList2 = 'assets/icons/icon_list2.svg';
   static const String icRowDown = 'assets/icons/ic_rowDown.svg';
   static const String icRowRight = 'assets/icons/ic_rowRight.svg';
+  static const String iconArrowLightGray =
+      'assets/icons/icon_arrow_light_gray.svg';
 }
