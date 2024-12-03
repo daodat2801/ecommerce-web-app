@@ -29,7 +29,35 @@ flutter:
   generate: true
   assets:
     - assets/data/
-    - assets/images/
+    
+    - assets/images/team_1_user_1.png
+    - assets/images/team_1_user_2.png
+    - assets/images/team_1_user_3.png
+    - assets/images/about_title.png
+    - assets/icons/fa_brand_1.png
+    - assets/icons/fa_brand_2.png
+    - assets/icons/fa_brand_3.png
+    - assets/icons/fa_brand_4.png
+    - assets/icons/fa_brand_5.png
+    - assets/icons/fa_brand_6.png
+    - assets/icons/facebook.png
+    - assets/icons/instagram.png
+    - assets/icons/twitter.png
+    - assets/icons/youtube_header.png
+    - assets/icons/twitter_header.png
+    - assets/icons/instagram_header.png
+    - assets/icons/facebook_header.png
+    - assets/icons/email_header.png
+    - assets/icons/phone_header.png
+    - assets/icons/search.png
+    - assets/icons/cart.png
+    - assets/icons/favorite.png
+    - assets/icons/user_login.png
+    
+    - assets/images/work_with_us.png
+    - assets/images/scenic_image_with_play_button_overlay.png
+
+
   fonts:
     - family: Raleway
       fonts:

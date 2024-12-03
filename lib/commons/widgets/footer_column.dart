@@ -17,9 +17,9 @@ class FooterColumn extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w700,
                 fontSize: 16,
-                color: Colors.black,
+                color: Color(0xFF252B42),
               ),
             ),
             const SizedBox(height: 15),
@@ -31,8 +31,9 @@ class FooterColumn extends StatelessWidget {
                   child: Text(
                     item,
                     style: const TextStyle(
-                      color: Colors.grey,
+                      color: Color(0xFF737373),
                       fontSize: 14,
+                      fontWeight: FontWeight.w700,
                       decoration: TextDecoration.none,
                     ),
                   ),

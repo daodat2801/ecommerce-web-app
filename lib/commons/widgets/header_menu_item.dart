@@ -9,15 +9,13 @@ class HeaderMenuItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: GestureDetector(
-        onTap: () {
-          print(title);
-        },
+        onTap: () {},
         child: Text(
           title,
           style: const TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-            fontWeight: FontWeight.w400,
+            fontSize: 14,
+            color: Color(0xFF737373),
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),

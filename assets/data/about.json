@@ -1,0 +1,56 @@
+{
+    "header": {
+      "companyName": "Bandage",
+      "navigationLinks": ["Home", "Product", "Pricing", "Contact"],
+      "buttons": ["Login", "Become a member"]
+    },
+    "aboutUsSection": {
+      "title": "ABOUT US",
+      "description": "We know how large objects will act, but things on a small scale.",
+      "button": "Get Quote Now",
+      "placeholderText": "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent."
+    },
+    "statisticsSection": {
+      "happyCustomers": "15K",
+      "monthlyVisitors": "150K",
+      "countriesWorldwide": "15",
+      "topPartners": "100+"
+    },
+    "videoSection": {
+      "image": "scenic_image_with_play_button_overlay.png"
+    },
+    "meetOurTeamSection": {
+      "title": "Meet Our Team",
+      "description": "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics.",
+      "teamMembers": [
+        {
+          "username": "Username 1",
+          "profession": "Profession 1"
+        },
+        {
+          "username": "Username 2",
+          "profession": "Profession 2"
+        },
+        {
+          "username": "Username 3",
+          "profession": "Profession 3"
+        }
+      ]
+    },
+    "partnersSection": {
+      "logos": ["Hooli", "Lyft", "Stripe", "AWS", "Others"]
+    },
+    "callToActionSection": {
+      "title": "WORK WITH US",
+      "subtitle": "Now Let's grow Yours",
+      "description": "The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th.",
+      "button": "Button"
+    },
+    "footer": {
+      "companyInfo": ["About Us", "Jobs", "Press", "Blog"],
+      "legal": ["Terms of Service", "Privacy Policy"],
+      "features": ["Business Marketing", "User Analytic", "Live Chat"],
+      "resources": ["IOS & Android", "Watch a Demo", "Customers"],
+      "getInTouch": ["Contact Us", "FAQ"]
+    }
+  }  

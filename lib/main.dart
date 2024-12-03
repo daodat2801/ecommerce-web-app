@@ -1,3 +1,4 @@
+import 'package:ecommerce_web_app/pages/about/about_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,15 +22,7 @@ class MainApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       home: const Scaffold(
-        body: Center(
-          child: Text(
-            'Hello World!',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 20,
-                color: AppColors.textSecondaryColor),
-          ),
-        ),
+        body: Center(child: AboutScreen()),
       ),
     );
   }
