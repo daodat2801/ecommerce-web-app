@@ -12,19 +12,19 @@ class CategoryList extends StatelessWidget {
       child: Row(
         children: [
           _buildStack(
-              imgPath: AppImag.cloth1, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth1, title: "CLOTHS", itemCount: "5 items"),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImag.cloth2, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth2, title: "CLOTHS", itemCount: "5 items"),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImag.cloth3, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth3, title: "CLOTHS", itemCount: "5 items"),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImag.cloth4, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth4, title: "CLOTHS", itemCount: "5 items"),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImag.cloth5, title: "CLOTHS", itemCount: "5 items")
+              imgPath: AppImage.cloth5, title: "CLOTHS", itemCount: "5 items")
         ],
       ),
     );
