@@ -58,6 +58,7 @@ flutter:
     - assets/images/scenic_image_with_play_button_overlay.png
 
 
+    - assets/icons/
   fonts:
     - family: Raleway
       fonts:

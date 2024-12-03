@@ -15,21 +15,12 @@ class PricingFaqs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
+      width: double.infinity,
+      height: 700,
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 80),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: const Color.fromRGBO(35, 166, 240, 1),
-          width: 1,
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,31 +29,39 @@ class PricingFaqs extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              height: 32 / 24,
+              fontSize: 40,
+              fontWeight: FontWeight.w600,
+              height: 50 / 40,
+              letterSpacing: 0.2,
+              color: Color.fromRGBO(37, 43, 66, 1),
             ),
           ),
           const SizedBox(height: 8),
+
           // Description
-          Text(
-            description,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 14,
-              color: Color.fromRGBO(115, 115, 115, 1),
+          SizedBox(
+            width: 552,
+            child: Text(
+              description,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Color.fromRGBO(115, 115, 115, 1),
+                height: 30 / 20,
+                letterSpacing: 0.2,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
           const SizedBox(height: 24),
-          // FAQs Layout (Two columns)
           LayoutBuilder(
             builder: (context, constraints) {
-              // Split questions into two columns
               List<List<Map<String, String>>> columns = [
                 questions.sublist(0, (questions.length / 2).ceil()),
                 questions.sublist((questions.length / 2).ceil()),
               ];
-
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -89,12 +88,23 @@ class PricingFaqs extends StatelessWidget {
               );
             },
           ),
+         const SizedBox(height: 40),
+          const Text(
+            'Haven’t got your answer? Contact our support',
+            style: TextStyle(
+              color: Color.fromRGBO(115, 115, 115, 1),
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+              height: 30 / 20,
+              letterSpacing: 0.2,
+            ),
+            textAlign: TextAlign.center,
+          )
         ],
       ),
     );
   }
 
-  // Helper to build a single FAQ item
   Widget _buildQuestionItem(Map<String, String> question) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
@@ -126,6 +136,8 @@ class PricingFaqs extends StatelessWidget {
             question['answer']!,
             style: const TextStyle(
               fontSize: 14,
+              height: 20 / 14,
+              letterSpacing: 0.2,
               color: Color.fromRGBO(115, 115, 115, 1),
             ),
           ),

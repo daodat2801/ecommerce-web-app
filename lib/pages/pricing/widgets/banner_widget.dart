@@ -6,7 +6,8 @@ class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 288,
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: const Column(
         children: [
           Text(

@@ -116,7 +116,7 @@ class ItemTypeWidget extends StatelessWidget {
           const SizedBox(height: 16),
           InkWell(
             onTap: () {
-              // Add your onTap functionality here
+              
             },
             child: Container(
               width: 246,

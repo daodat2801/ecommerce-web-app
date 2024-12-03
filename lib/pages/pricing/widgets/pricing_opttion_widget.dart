@@ -6,7 +6,7 @@ class PricingOpttionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         const Text(
           'Pricing',
           style: TextStyle(
@@ -30,10 +30,10 @@ class PricingOpttionWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
+                  Text(
                     'Monthly',
                     style: TextStyle(
                       fontSize: 16,
@@ -43,10 +43,10 @@ class PricingOpttionWidget extends StatelessWidget {
                       color: Color.fromRGBO(37, 43, 66, 1),
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8),
                   PricingSwitch(),
-                  const SizedBox(width: 8),
-                  const Text(
+                  SizedBox(width: 8),
+                  Text(
                     'Yearly',
                     style: TextStyle(
                       fontSize: 16,
@@ -91,7 +91,8 @@ class PricingSwitch extends StatefulWidget {
   const PricingSwitch({super.key});
 
   @override
-  
+
+  // ignore: library_private_types_in_public_api
   _PricingSwitchState createState() => _PricingSwitchState();
 }
 
