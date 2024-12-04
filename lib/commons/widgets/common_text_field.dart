@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce_web_app/commons/utils/extensions.dart';
 
 class CommonTextField extends StatelessWidget {
   const CommonTextField({
@@ -9,37 +8,49 @@ class CommonTextField extends StatelessWidget {
     required this.title,
     this.maxLines,
     this.suffixIcon,
-    this.readOnly = false,
+    this.obscureText = false,
   });
   final TextEditingController? controller;
   final String hintText;
   final String title;
   final int? maxLines;
   final Widget? suffixIcon;
-  final bool readOnly;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
-          style: context.textTheme.titleLarge,
+          style: const TextStyle(
+            fontSize: 14,
+            color: Color(0xFF282828),
+            fontWeight: FontWeight.w500,
+          ),
         ),
         const SizedBox(height: 10),
         TextField(
-          readOnly: readOnly,
-          onTapOutside: (event) {
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-          autocorrect: false,
+          obscureText: obscureText,
           controller: controller,
           decoration: InputDecoration(
-            hintText: hintText,
-            suffixIcon: suffixIcon,
-          ),
-          maxLines: maxLines,
+              hintText: hintText,
+              hintStyle: const TextStyle(
+                fontSize: 14,
+                color: Color(0xFF949CA9),
+                fontWeight: FontWeight.w400,
+              ),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4),
+                  borderSide: const BorderSide(
+                    color: Color(0xFFFC424A),
+                    width: 1,
+                  )),
+              filled: true,
+              fillColor: Colors.white,
+              suffixIcon: suffixIcon),
+          maxLines: obscureText ? 1 : maxLines,
         ),
       ],
     );
