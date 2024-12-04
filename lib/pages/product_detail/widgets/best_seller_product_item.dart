@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../commons/constants/app_color.dart';
+import '../../../models/product_detail_model.dart';
 
 class BestSellerProductItem extends StatelessWidget {
+  final BestSellerProduct productItem;
 
-  final String imagePath;
-
-  const BestSellerProductItem({super.key, required this.imagePath});
+  const BestSellerProductItem({super.key, required this.productItem});
 
   String _formatMoneyText(double amount) {
-    final formatter = NumberFormat.currency(
-        locale: 'en_US', symbol: '\$', decimalDigits: 2);
+    final formatter =
+        NumberFormat.currency(locale: 'en_US', symbol: '\$', decimalDigits: 2);
     return formatter.format(amount);
   }
 
+  String _getImagePath(String? imageFileName) {
+    if (imageFileName == null) {
+      return 'assets/images/best_seller_product_1.png';
+    }
+    return 'assets/images/$imageFileName';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class BestSellerProductItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              imagePath,
+              _getImagePath(productItem.image),
               width: double.infinity,
               height: 280,
               fit: BoxFit.cover,
@@ -39,18 +45,18 @@ class BestSellerProductItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Graphic Design',
-                      style: TextStyle(
+                    Text(
+                      productItem.name,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor,
                       ),
                     ),
                     const SizedBox(height: 15),
-                    const Text(
-                      'English Department',
-                      style: TextStyle(
+                    Text(
+                      productItem.department,
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textMediumGrayColor,
@@ -62,20 +68,19 @@ class BestSellerProductItem extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            _formatMoneyText(16.48),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: AppColors.textLightGray
-                            ),
-                          ),
-                          const SizedBox(width: 5),
-                          Text(
-                            _formatMoneyText(6.48),
+                            _formatMoneyText(productItem.originalPrice),
                             style: const TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 16,
-                                color: AppColors.textColorGreen,
+                                color: AppColors.textLightGray),
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            _formatMoneyText(productItem.discountedPrice),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                              color: AppColors.textColorGreen,
                             ),
                           )
                         ],
@@ -87,6 +92,40 @@ class BestSellerProductItem extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class HoverItem extends StatefulWidget {
+  final BestSellerProduct productItem;
+
+  const HoverItem({super.key, required this.productItem});
+
+  @override
+  _HoverItemState createState() => _HoverItemState();
+}
+
+class _HoverItemState extends State<HoverItem> {
+  double scale = 1.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          scale = 1.05;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          scale = 1.0;
+        });
+      },
+      child: AnimatedScale(
+        scale: scale,
+        duration: const Duration(milliseconds: 200),
+        child: BestSellerProductItem(productItem: widget.productItem),
       ),
     );
   }

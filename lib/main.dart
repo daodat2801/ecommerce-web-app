@@ -1,3 +1,4 @@
+import 'package:ecommerce_web_app/pages/product_detail/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +20,7 @@ class MainApp extends StatelessWidget {
       ),
       home: const Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: ProductDetailScreen(),
         ),
       ),
     );
