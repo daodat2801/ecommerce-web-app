@@ -1,4 +1,6 @@
 class AppSvgs {
+  static const String isComment = "assets/icons/comment.svg";
+  static const String isDate = "assets/icons/date.svg";
   static const String svg = 'assets/svg/imgSvg.svg';
   static const String arrowLeft = 'assets/icons/arrow_left.svg';
   static const String arrowRight = 'assets/icons/arrow_right.svg';
