@@ -1,4 +1,7 @@
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import '../constants/app_svg.dart';
 import 'footer_column.dart';
 import 'footer_subscribe.dart';
 
@@ -11,7 +14,7 @@ class Footer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Container(
-          color: Colors.white,
+          color: AppColors.white,
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 195),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -21,49 +24,28 @@ class Footer extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
-                  color: Color(0xFF252B42),
+                  color: AppColors.textPrimaryColor,
                 ),
               ),
               Row(
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/icons/facebook.png",
-                      width: 24,
-                      height: 24,
-                    ),
-                  ),
+                  SvgPicture.asset(AppSvgs.icFbBlue,height: 16,width: 16 ),
                   const SizedBox(width: 20),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/icons/instagram.png",
-                      width: 24,
-                      height: 24,
-                    ),
-                  ),
+                  SvgPicture.asset(AppSvgs.icIgBlue,height: 16,width: 16 ),
                   const SizedBox(width: 20),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/icons/twitter.png",
-                      width: 24,
-                      height: 24,
-                    ),
-                  ),
+                  SvgPicture.asset(AppSvgs.icTwBlue,height: 16,width: 16 ),
                 ],
               ),
             ],
           ),
         ),
         Container(
-          color: const Color(0xFFFFFFFF),
+          color: AppColors.white,
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 195),
           child: const Column(
             children: [
               Divider(
-                color: Color(0xFFE6E6E6),
+                color: AppColors.divider,
                 thickness: 1,
               ),
               SizedBox(height: 50),
@@ -110,7 +92,7 @@ class Footer extends StatelessWidget {
           ),
         ),
         Container(
-          color: const Color(0xFFFAFAFA),
+          color: AppColors.secondaryBackgroundColor,
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 195),
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -118,7 +100,7 @@ class Footer extends StatelessWidget {
               Text(
                 "Made With Love By Finland All Rights Reserved",
                 style: TextStyle(
-                  color: Color(0xFF737373),
+                  color: AppColors.textSecondaryColor3,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_color.dart';
+
 class FooterColumn extends StatelessWidget {
   final String title;
   final List<String> items;
@@ -19,7 +21,7 @@ class FooterColumn extends StatelessWidget {
               style: const TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
-                color: Color(0xFF252B42),
+                color: AppColors.textPrimaryColor,
               ),
             ),
             const SizedBox(height: 15),
@@ -31,7 +33,7 @@ class FooterColumn extends StatelessWidget {
                   child: Text(
                     item,
                     style: const TextStyle(
-                      color: Color(0xFF737373),
+                      color: AppColors.textSecondaryColor3,
                       fontSize: 14,
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.none,

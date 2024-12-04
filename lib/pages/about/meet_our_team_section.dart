@@ -1,4 +1,7 @@
+import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
 
 class MeetOurTeamSection extends StatelessWidget {
   const MeetOurTeamSection({super.key});
@@ -101,30 +104,11 @@ class TeamMember extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "assets/icons/facebook.png",
-                width: 24,
-                height: 24,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "assets/icons/instagram.png",
-                width: 24,
-                height: 24,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "assets/icons/twitter.png",
-                width: 24,
-                height: 24,
-              ),
-            ),
+            SvgPicture.asset(AppSvgs.icFbBlue,height: 16,width: 16 ),
+            const SizedBox(width: 5),
+            SvgPicture.asset(AppSvgs.icIgBlue,height: 16,width: 16 ),
+            const SizedBox(width: 5),
+            SvgPicture.asset(AppSvgs.icTwBlue,height: 16,width: 16 ),
           ],
         ),
       ],
