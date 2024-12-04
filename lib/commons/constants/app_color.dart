@@ -35,4 +35,6 @@ class AppColors {
   static const Color colorCircle = Color(0xffe77c40);
   static const Color secondaryBackgroundColor = Color(0xfffafafa);
   static const Color divider = Color(0xffe6e6e6);
+  static const Color gestureDetectorColor = Color(0xFFD8D8D8);
+  static const Color blueMiddle = Color(0xFF8EC2F2);
 }
