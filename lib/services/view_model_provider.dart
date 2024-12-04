@@ -12,7 +12,7 @@ class ViewModelProvider {
           (ref) => LoginScreenViewModel(LoginScreenState(), UserRepository()));
 
   static final shopScreenVMProvider =
-      StateNotifierProvider<ShopScreenViewModel, ShopState>((ref) {
+      StateNotifierProvider<ShopScreenViewModel, ShopScreenState>((ref) {
     return ShopScreenViewModel();
   });
   static final teamScreenVMProvider =

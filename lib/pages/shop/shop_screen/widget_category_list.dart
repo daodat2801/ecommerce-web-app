@@ -37,7 +37,7 @@ Widget _buildStack(
     children: [
       Image.asset(
         imgPath,
-        width: 170,
+        width: 210,
         fit: BoxFit.scaleDown,
       ),
       Column(
