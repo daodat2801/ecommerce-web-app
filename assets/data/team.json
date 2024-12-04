@@ -1,0 +1,59 @@
+{
+  "header": {
+    "companyName": "Bandage",
+    "navigationLinks": ["Home", "Product", "Pricing", "Contact"],
+    "buttons": ["Login", "Become a member"]
+  },
+  "banner": {
+    "title": "Innovation tailored for you"
+  },
+  "meetOurTeamSection": {
+    "title": "Meet Our Team",
+    "teamMembers": [
+      {
+        "username": "Username 1",
+        "profession": "Profession 1",
+        "socialMedia": ["Facebook", "Instagram", "Twitter"]
+      },
+      {
+        "username": "Username 2",
+        "profession": "Profession 2",
+        "socialMedia": ["Facebook", "Instagram", "Twitter"]
+      },
+      {
+        "username": "Username 3",
+        "profession": "Profession 3",
+        "socialMedia": ["Facebook", "Instagram", "Twitter"]
+      }
+    ]
+  },
+  "callToActionSection": {
+    "title": "Start Your 14-Day Free Trial",
+    "description": "Take the first step towards innovation with our free trial."
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Company Info",
+        "links": ["About Us", "Jobs", "Press", "Blog"]
+      },
+      {
+        "title": "Legal",
+        "links": ["Terms of Service", "Privacy Policy"]
+      },
+      {
+        "title": "Features",
+        "links": ["Business Marketing", "User Analytic", "Live Chat"]
+      },
+      {
+        "title": "Resources",
+        "links": ["IOS & Android", "Watch a Demo", "Customers"]
+      },
+      {
+        "title": "Get In Touch",
+        "links": ["Contact Us", "FAQ", "Support"]
+      }
+    ]
+  }
+}
+

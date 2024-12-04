@@ -1,0 +1,158 @@
+{
+    "page": {
+      "title": "Bandage Pricing",
+      "sections": [
+        {
+          "type": "header",
+          "elements": [
+            {
+              "type": "logo",
+              "text": "Bandage"
+            },
+            {
+              "type": "navigation",
+              "links": [
+                { "text": "Home", "url": "#" },
+                { "text": "Product", "url": "#" },
+                { "text": "Pricing", "url": "#" },
+                { "text": "Contact", "url": "#" }
+              ]
+            },
+            {
+              "type": "auth",
+              "links": [
+                { "text": "Login", "url": "#" },
+                { "text": "Become a member", "url": "#" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "main",
+          "elements": [
+            {
+              "type": "title",
+              "text": "Simple Pricing"
+            },
+            {
+              "type": "breadcrumb",
+              "links": [
+                { "text": "Home", "url": "#" },
+                { "text": "Pricing", "url": "#" }
+              ]
+            },
+            {
+              "type": "pricing",
+              "description": "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics",
+              "billing_options": [
+                { "text": "Monthly", "value": "monthly" },
+                { "text": "Yearly", "value": "yearly", "discount": "25%" }
+              ],
+              "plans": [
+                {
+                  "name": "Free",
+                  "price": "0",
+                  "currency": "$",
+                  "period": "Per Month",
+                  "features": [
+                    "Unlimited product updates",
+                    "Unlimited integrations",
+                    "1GB Cloud storage",
+                    "Email and community support"
+                  ],
+                  "cta": "Try for free"
+                },
+                {
+                  "name": "Standard",
+                  "price": "9.99",
+                  "currency": "$",
+                  "period": "Per Month",
+                  "features": [
+                    "Unlimited product updates",
+                    "Unlimited integrations",
+                    "1GB Cloud storage",
+                    "Email and community support"
+                  ],
+                  "cta": "Try for free"
+                },
+                {
+                  "name": "Premium",
+                  "price": "19.99",
+                  "currency": "$",
+                  "period": "Per Month",
+                  "features": [
+                    "Unlimited product updates",
+                    "Unlimited integrations",
+                    "1GB Cloud storage",
+                    "Email and community support"
+                  ],
+                  "cta": "Try for free"
+                }
+              ]
+            },
+            {
+              "type": "trusted_by",
+              "text": "Trusted By Over 4000 Big Companies",
+              "logos": [
+                "Hooli",
+                "Lyft",
+                "Stripe",
+                "AWS",
+                "Reddit"
+              ]
+            },
+            {
+              "type": "faq",
+              "title": "Pricing FAQs",
+              "description": "Problems trying to resolve the conflict between the two major realms of Classical physics",
+              "questions": [
+                {
+                  "question": "The quick fox jumps over the lazy dog",
+                  "answer": "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+                },
+                {
+                  "question": "The quick fox jumps over the lazy dog",
+                  "answer": "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+                },
+                {
+                  "question": "The quick fox jumps over the lazy dog",
+                  "answer": "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+                },
+                {
+                  "question": "The quick fox jumps over the lazy dog",
+                  "answer": "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "sections": [
+            {
+              "title": "Company Info",
+              "links": ["About Us", "Jobs", "Press", "Blog"]
+            },
+            {
+              "title": "Legal",
+              "links": ["Terms of Service", "Privacy Policy"]
+            },
+            {
+              "title": "Features",
+              "links": ["Business Marketing", "User Analytic", "Live Chat"]
+            },
+            {
+              "title": "Resources",
+              "links": ["IOS & Android", "Watch a Demo", "Customers"]
+            },
+            {
+              "title": "Get In Touch",
+              "links": ["Contact Us", "FAQ", "Support"]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
+  
