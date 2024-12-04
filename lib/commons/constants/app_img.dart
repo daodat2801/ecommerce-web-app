@@ -12,4 +12,5 @@ class AppImage {
   static const String cloth4 = 'assets/images/cloth4.png';
   static const String cloth5 = 'assets/images/cloth5.png';
   static const String pathProduct = 'assets/images';
+  static const String family = 'assets/images/family.png';
 }

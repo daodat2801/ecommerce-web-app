@@ -18,6 +18,14 @@ class AppSvgs {
   static const String icArrowRight = 'assets/icons/ic_arrow_right.svg';
   static const String iconArrowLightGray =
       'assets/icons/icon_arrow_light_gray.svg';
+  static const String icTwDark = 'assets/icons/ic_tw_dark.svg';
+  static const String icIgDark = 'assets/icons/ic_ig_dark.svg';
+  static const String icFbDark = 'assets/icons/ic_fb_dark.svg';
+  static const String icLkDark = 'assets/icons/ic_lk_dark.svg';
+  static const String icPhoneBlue = 'assets/icons/ic_phone_blue.svg';
+  static const String icMailBlue = 'assets/icons/ic_mail_blue.svg';
+  static const String icLocationBlue = 'assets/icons/ic_location_blue.svg';
+  static const String icArrowBlue = 'assets/icons/ic_arrow_blue.svg';
   static const String icYtb = 'assets/icons/ic_ytb.svg';
   static const String icFb = 'assets/icons/ic_fb.svg';
   static const String icTw = 'assets/icons/ic_tw.svg';
