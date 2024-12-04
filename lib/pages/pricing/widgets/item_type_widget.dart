@@ -1,6 +1,5 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
-
 class ItemTypeWidget extends StatelessWidget {
   final String name;
   final String price;

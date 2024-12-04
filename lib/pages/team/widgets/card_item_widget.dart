@@ -19,7 +19,7 @@ class CardItemWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 230,
           width: 330,
           child: Image.asset(
@@ -49,11 +49,11 @@ class CardItemWidget extends ConsumerWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(AppSvgs.icFbBlue, height: 16, width: 16),
+            SvgPicture.asset(AppSvgs.icFbBlue, height: 24, width: 24),
             const SizedBox(width: 5),
-            SvgPicture.asset(AppSvgs.icIgBlue, height: 16, width: 16),
+            SvgPicture.asset(AppSvgs.icIgBlue, height: 24, width: 24),
             const SizedBox(width: 5),
-            SvgPicture.asset(AppSvgs.icTwBlue, height: 16, width: 16),
+            SvgPicture.asset(AppSvgs.icTwBlue, height: 24, width: 24),
           ],
         ),
       ],
