@@ -1,29 +1,23 @@
 import 'package:ecommerce_web_app/data/product_repository.dart';
-import 'package:ecommerce_web_app/data/user_repository.dart';
+import 'package:ecommerce_web_app/pages/shop/shop_screen_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../models/shop_model.dart';
-
-class ShopScreenViewModel extends StateNotifier<ShopState> {
+class ShopScreenViewModel extends StateNotifier<ShopScreenState> {
   final ProductRepository _repository = ProductRepository();
 
-  ShopScreenViewModel() : super(ShopState.initial()) {
+  ShopScreenViewModel() : super(ShopScreenState.initial()) {
     fetchProducts();
   }
 
   Future<void> fetchProducts() async {
-    final products = await _repository.loadProducts();
-    state = ShopState(products: products);
-  }
-}
-
-
-class ShopState {
-  final List<Product> products;
-
-  ShopState({required this.products});
-
-  factory ShopState.initial() {
-    return ShopState(products: []);
+    try {
+      await Future.delayed(const Duration(seconds: 4));
+      final products = await _repository.loadProducts();
+      state = state.copyWith(
+        products: products,
+      );
+    } catch (e) {
+      print("Error fetching products: $e");
+    }
   }
 }
