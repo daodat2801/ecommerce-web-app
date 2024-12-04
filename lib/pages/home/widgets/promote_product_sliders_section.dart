@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
 
 class PromoteProductSlidersSection extends StatefulWidget {
@@ -39,7 +40,7 @@ class _PromoteProductSlidersSectionState
         CarouselSlider(
           items: _products.map((product) {
             return Container(
-              color: const Color(0xFF23A6F0),
+              color: AppColors.textRedColor,
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 209, vertical: 50),
@@ -50,7 +51,7 @@ class _PromoteProductSlidersSectionState
                     Text(
                       product['subtitle'],
                       style: const TextStyle(
-                        color: Color(0xFFFFFFFF),
+                        color: AppColors.textWhiteColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
                       ),
@@ -59,7 +60,7 @@ class _PromoteProductSlidersSectionState
                     Text(
                       product['title'],
                       style: const TextStyle(
-                        color: Color(0xFFFFFFFF),
+                        color: AppColors.textWhiteColor,
                         fontSize: 58,
                         fontWeight: FontWeight.w700,
                       ),
@@ -68,7 +69,7 @@ class _PromoteProductSlidersSectionState
                     Text(
                       product['description'],
                       style: const TextStyle(
-                        color: Color(0xFFFFFFFF),
+                        color: AppColors.textWhiteColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -79,7 +80,7 @@ class _PromoteProductSlidersSectionState
                         Text(
                           '\$${product['price']}',
                           style: const TextStyle(
-                            color: Color(0xFFFFFFFF),
+                            color: AppColors.textWhiteColor,
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                           ),
@@ -88,7 +89,7 @@ class _PromoteProductSlidersSectionState
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF2DC071),
+                            backgroundColor: AppColors.productColorGreen,
                             padding: const EdgeInsets.symmetric(
                               vertical: 20,
                               horizontal: 45,
@@ -101,7 +102,7 @@ class _PromoteProductSlidersSectionState
                             "ADD TO CART",
                             style: TextStyle(
                               fontSize: 14,
-                              color: Color(0xFFFFFFFF),
+                              color: AppColors.textWhiteColor,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
@@ -121,10 +122,9 @@ class _PromoteProductSlidersSectionState
                 _currentIndex = index;
               });
             },
-            initialPage:
-                _currentIndex, // Sử dụng _currentIndex để xác định trang bắt đầu
+            initialPage: _currentIndex,
           ),
-          carouselController: _carouselController, // Điều khiển carousel slider
+          carouselController: _carouselController,
         ),
         Positioned(
           left: 20,
@@ -134,8 +134,7 @@ class _PromoteProductSlidersSectionState
                 setState(() {
                   _currentIndex--;
                 });
-                _carouselController
-                    .animateToPage(_currentIndex); // Điều khiển carousel
+                _carouselController.animateToPage(_currentIndex);
               }
             },
             child: Container(
@@ -144,7 +143,7 @@ class _PromoteProductSlidersSectionState
               alignment: Alignment.center,
               child: const Icon(
                 Icons.arrow_back_ios,
-                color: Color(0xFFFFFFFF),
+                color: AppColors.textWhiteColor,
                 size: 40,
                 weight: 24,
               ),
@@ -159,8 +158,7 @@ class _PromoteProductSlidersSectionState
                 setState(() {
                   _currentIndex++;
                 });
-                _carouselController
-                    .animateToPage(_currentIndex); // Điều khiển carousel
+                _carouselController.animateToPage(_currentIndex);
               }
             },
             child: Container(
@@ -169,7 +167,7 @@ class _PromoteProductSlidersSectionState
               alignment: Alignment.center,
               child: const Icon(
                 Icons.arrow_forward_ios,
-                color: Color(0xFFFFFFFF),
+                color: AppColors.textWhiteColor,
                 size: 40,
                 weight: 24,
               ),
@@ -184,8 +182,7 @@ class _PromoteProductSlidersSectionState
               return GestureDetector(
                 onTap: () => setState(() {
                   _currentIndex = entry.key;
-                  _carouselController.animateToPage(
-                      _currentIndex); // Điều khiển carousel khi chọn indicator
+                  _carouselController.animateToPage(_currentIndex);
                 }),
                 child: Container(
                   width: 40,
@@ -193,8 +190,8 @@ class _PromoteProductSlidersSectionState
                   margin: const EdgeInsets.symmetric(horizontal: 4),
                   decoration: BoxDecoration(
                     color: _currentIndex == entry.key
-                        ? const Color(0xFFFFFFFF)
-                        : const Color(0xFFD8D8D8),
+                        ? AppColors.textWhiteColor
+                        : AppColors.gestureDetectorColor,
                   ),
                 ),
               );

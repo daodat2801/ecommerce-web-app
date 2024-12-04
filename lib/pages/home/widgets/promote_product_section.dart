@@ -1,3 +1,4 @@
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
 
 class PromoteProductSection extends StatelessWidget {
@@ -6,7 +7,7 @@ class PromoteProductSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFFFFFFF),
+      color: AppColors.white,
       padding: const EdgeInsets.symmetric(vertical: 112, horizontal: 132),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,7 +26,7 @@ class PromoteProductSection extends StatelessWidget {
                 const Text(
                   "SUMMER 2020",
                   style: TextStyle(
-                    color: Color(0xFFBDBDBD),
+                    color: AppColors.textLightGray,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -34,16 +35,16 @@ class PromoteProductSection extends StatelessWidget {
                 const Text(
                   "Part of the Neural\nUniverse",
                   style: TextStyle(
-                    color: Color(0xFF252B42),
+                    color: AppColors.textPrimaryColor,
                     fontSize: 40,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 15),
                 const Text(
-                  "We know how large objects will act, \nbut things on a small scale.",
+                  "We know how large objects will act,\nbut things on a small scale.",
                   style: TextStyle(
-                    color: Color(0xFF737373),
+                    color: AppColors.textMediumGrayColor,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                   ),
@@ -54,7 +55,7 @@ class PromoteProductSection extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF23A6F0),
+                        backgroundColor: AppColors.primaryColor,
                         padding: const EdgeInsets.symmetric(
                           vertical: 20,
                           horizontal: 45,
@@ -67,7 +68,7 @@ class PromoteProductSection extends StatelessWidget {
                         "BUY NOW",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Color(0xFFFFFFFF),
+                          color: AppColors.white,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -77,7 +78,7 @@ class PromoteProductSection extends StatelessWidget {
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(
-                          color: Color(0xFF2DC071),
+                          color: AppColors.productColorGreen,
                           width: 1,
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -92,7 +93,7 @@ class PromoteProductSection extends StatelessWidget {
                         "READ MORE",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Color(0xFF2DC071),
+                          color: AppColors.productColorGreen,
                           fontWeight: FontWeight.w700,
                         ),
                       ),

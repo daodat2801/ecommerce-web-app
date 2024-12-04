@@ -1,6 +1,8 @@
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:ecommerce_web_app/commons/constants/app_img.dart';
+import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../commons/constants/app_svg.dart';
 
 class FeaturePostsSection extends StatelessWidget {
   const FeaturePostsSection({super.key});
@@ -16,7 +18,7 @@ class FeaturePostsSection extends StatelessWidget {
           Text(
             "Practice Advice",
             style: TextStyle(
-              color: Color(0xFF23A6F0),
+              color: AppColors.primaryBlue,
               fontSize: 14,
               fontWeight: FontWeight.w700,
             ),
@@ -25,7 +27,7 @@ class FeaturePostsSection extends StatelessWidget {
           Text(
             "Featured Posts",
             style: TextStyle(
-              color: Color(0xFF252B42),
+              color: AppColors.textPrimaryColor,
               fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
@@ -35,7 +37,7 @@ class FeaturePostsSection extends StatelessWidget {
             "Problems trying to resolve the conflict between \nthe two major realms of Classical physics: Newtonian mechanics",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xFF737373),
+              color: AppColors.textMediumGrayColor,
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
@@ -46,7 +48,7 @@ class FeaturePostsSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _PostCard(
-                imagePath: 'assets/images/post1.png',
+                imagePath: AppImage.post1,
                 title: "Loudest à la Madison #1 \n(L'intégral)",
                 description:
                     "We focus on ergonomics and meeting \nyou where you work. It's only a \nkeystroke away.",
@@ -54,7 +56,7 @@ class FeaturePostsSection extends StatelessWidget {
                 comments: "10 comments",
               ),
               _PostCard(
-                imagePath: 'assets/images/post2.png',
+                imagePath: AppImage.post2,
                 title: "Loudest à la Madison #1 \n(L'intégral)",
                 description:
                     "We focus on ergonomics and meeting \nyou where you work. It's only a \nkeystroke away.",
@@ -62,7 +64,7 @@ class FeaturePostsSection extends StatelessWidget {
                 comments: "10 comments",
               ),
               _PostCard(
-                imagePath: 'assets/images/post3.png',
+                imagePath: AppImage.post3,
                 title: "Loudest à la Madison #1 \n(L'intégral)",
                 description:
                     "We focus on ergonomics and meeting \nyou where you work. It's only a \nkeystroke away.",
@@ -118,13 +120,13 @@ class _PostCard extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE74040),
+                      color: AppColors.textRedColor,
                       borderRadius: BorderRadius.circular(3),
                     ),
                     child: const Text(
                       "NEW",
                       style: TextStyle(
-                        color: Color(0xFFFFFFFF),
+                        color: AppColors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
@@ -143,7 +145,7 @@ class _PostCard extends StatelessWidget {
                       Text(
                         "Google",
                         style: TextStyle(
-                          color: Color(0xFF8EC2F2),
+                          color: AppColors.blueMiddle,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                         ),
@@ -152,7 +154,7 @@ class _PostCard extends StatelessWidget {
                       Text(
                         "Trending",
                         style: TextStyle(
-                          color: Color(0xFF737373),
+                          color: AppColors.textMediumGrayColor,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                         ),
@@ -161,7 +163,7 @@ class _PostCard extends StatelessWidget {
                       Text(
                         "New",
                         style: TextStyle(
-                          color: Color(0xFF737373),
+                          color: AppColors.textMediumGrayColor,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                         ),
@@ -172,7 +174,7 @@ class _PostCard extends StatelessWidget {
                   Text(
                     title,
                     style: const TextStyle(
-                      color: Color(0xFF252B42),
+                      color: AppColors.textPrimaryColor,
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
                     ),
@@ -181,7 +183,7 @@ class _PostCard extends StatelessWidget {
                   Text(
                     description,
                     style: const TextStyle(
-                      color: Color(0xFF737373),
+                      color: AppColors.textMediumGrayColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                     ),
@@ -192,13 +194,13 @@ class _PostCard extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          SvgPicture.asset("assets/icons/date.svg",
+                          SvgPicture.asset(AppSvgs.isDate,
                               height: 16, width: 16),
                           const SizedBox(width: 5),
                           Text(
                             date,
                             style: const TextStyle(
-                              color: Color(0xFF737373),
+                              color: AppColors.textMediumGrayColor,
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
@@ -207,13 +209,13 @@ class _PostCard extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          SvgPicture.asset("assets/icons/comment.svg",
+                          SvgPicture.asset(AppSvgs.isComment,
                               height: 16, width: 16),
                           const SizedBox(width: 5),
                           Text(
                             comments,
                             style: const TextStyle(
-                              color: Color(0xFF737373),
+                              color: AppColors.textMediumGrayColor,
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
@@ -227,7 +229,7 @@ class _PostCard extends StatelessWidget {
                     Text(
                       "Learn More",
                       style: TextStyle(
-                        color: Color(0xFF737373),
+                        color: AppColors.textMediumGrayColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
@@ -235,7 +237,7 @@ class _PostCard extends StatelessWidget {
                     SizedBox(width: 5),
                     Icon(
                       Icons.arrow_forward_ios,
-                      color: Color(0xFF23A6F0),
+                      color: AppColors.primaryColor,
                       size: 14,
                     )
                   ]),
