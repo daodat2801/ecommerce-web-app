@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primaryColor = Color(0xFF6200EA);
+  static const Color primaryColor = Color(0xff23A6F0);
   static const Color secondaryColor = Color(0xFF03DAC6);
   static const Color backgroundColor = Color(0xFFF5F5F5);
   static const Color white = Color(0xFFFFFFFF);
@@ -37,7 +37,6 @@ class AppColors {
   static const Color divider = Color(0xffe6e6e6);
   static const Color borderSwitchColor = Color(0xffD0D0D0);
   static const Color circleButtonColor2 = Color(0xffEBEBEB);
-  static const Color circleButtonColor2 = Color(0xffFEBEEB);
   static const Color gestureDetectorColor = Color(0xFFD8D8D8);
   static const Color blueMiddle = Color(0xFF8EC2F2);
 }
