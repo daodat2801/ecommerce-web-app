@@ -1,5 +1,5 @@
 import 'package:ecommerce_web_app/models/fetch_data_state.dart';
-import 'package:ecommerce_web_app/pages/product_detail/provider/product_detail_view_model_provider.dart';
+import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../commons/constants/app_color.dart';
@@ -11,7 +11,7 @@ class BestSellerProductsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final viewModel = ref.watch(productDetailViewModelProvider);
+    final viewModel = ref.watch(ViewModelProvider.productDetailViewModelProvider);
     final fetchBestSellerState = viewModel.fetchBestSellerProducts;
 
     if (fetchBestSellerState is Loading) {

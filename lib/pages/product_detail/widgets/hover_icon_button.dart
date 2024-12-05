@@ -3,8 +3,10 @@ import 'circle_icon_button.dart';
 
 class HoverIconButton extends StatefulWidget {
   final String iconPath;
+  final VoidCallback onTap;
 
-  const HoverIconButton({super.key, required this.iconPath});
+  const HoverIconButton(
+      {super.key, required this.iconPath, required this.onTap});
 
   @override
   _HoverIconButtonState createState() => _HoverIconButtonState();
@@ -31,7 +33,7 @@ class _HoverIconButtonState extends State<HoverIconButton> {
         duration: const Duration(milliseconds: 100),
         child: CircleIconButton(
           iconPath: widget.iconPath,
-          onTap: () {},
+          onTap: widget.onTap,
         ),
       ),
     );
