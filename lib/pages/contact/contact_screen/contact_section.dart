@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,26 +19,31 @@ class ContactSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "CONTACT US",
-                  style: TextStyle(
+                 Text(
+                 AppLocalizations.of(context)!.contact_tittle,
+                  style: const TextStyle(
                       fontSize: 16,
                       color: AppColors.textPrimaryColor,
                       fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  "Get in touch\ntoday!",
-                  style: TextStyle(
-                    fontSize: 58,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textPrimaryColor,
-                  ),
-                ),
+                 SizedBox(
+                  width:378 ,
+                   child: Text(
+                   AppLocalizations.of(context)!.contact_get_in_touch,
+                   overflow: TextOverflow.ellipsis,
+                   maxLines: 2,
+                    style: const TextStyle(
+                      fontSize: 58,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.textPrimaryColor,
+                    ),
+                                   ),
+                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  "We know how large objects will act,\nbut things on a small scale",
-                  style: TextStyle(
+                 Text(
+                  AppLocalizations.of(context)!.contact_we_know,
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textSecondaryColor3,

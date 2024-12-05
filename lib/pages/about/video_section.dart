@@ -1,3 +1,4 @@
+import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/services/about_us_provider.dart';

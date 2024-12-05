@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/route_path.dart';
 import 'package:ecommerce_web_app/commons/utils/app_alerts.dart';
 import 'package:ecommerce_web_app/commons/widgets/common_text_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:ecommerce_web_app/models/user.dart';
 import 'package:ecommerce_web_app/services/authentication_management.dart';
 import 'package:flutter/material.dart';
@@ -37,32 +38,32 @@ class LoginScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                "Sign In",
-                style: TextStyle(
+             Text(
+                AppLocalizations.of(context)!.login_title,
+                style:const  TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: Color(0xFF252B42),
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                "Let's build something great",
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.login_description,
+                style: const TextStyle(
                   fontSize: 14,
                   color: Color(0xFF737373),
                 ),
               ),
               const SizedBox(height: 30),
               CommonTextField(
-                title: "E-mail or phone number",
-                hintText: "Enter your email or phone number",
+                title: AppLocalizations.of(context)!.login_title_username,
+                hintText: AppLocalizations.of(context)!.login_hint_username,
                 controller: userNameTextController,
               ),
               const SizedBox(height: 20),
               CommonTextField(
-                title: "Password",
-                hintText: "Enter your password",
+                title: AppLocalizations.of(context)!.login_title_password,
+                hintText: AppLocalizations.of(context)!.login_hint_password,
                 obscureText: true,
                 controller: passWordTextController,
                 suffixIcon: const Icon(
@@ -82,9 +83,9 @@ class LoginScreen extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
-                child: const Text(
-                  "Login",
-                  style: TextStyle(
+                child: Text(
+                  AppLocalizations.of(context)!.login,
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
@@ -96,9 +97,9 @@ class LoginScreen extends ConsumerWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(
+                  child: Text(
+                    AppLocalizations.of(context)!.login_forgot_password,
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Color(0xFF009EF7),
                       fontWeight: FontWeight.w400,
@@ -110,9 +111,9 @@ class LoginScreen extends ConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Don't have an account? ",
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context)!.login_not_have_account,
+                    style:const  TextStyle(
                       fontSize: 14,
                       color: Color(0xFF282828),
                       fontWeight: FontWeight.w400,
@@ -120,9 +121,9 @@ class LoginScreen extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {},
-                    child: const Text(
-                      "Sign up",
-                      style: TextStyle(
+                    child:  Text(
+                      AppLocalizations.of(context)!.login_sign_up,
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Color(0xFF009EF7),
                         fontWeight: FontWeight.w400,

@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/services/about_us_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StatisticsSection extends ConsumerWidget {

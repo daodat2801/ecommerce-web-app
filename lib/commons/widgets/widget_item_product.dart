@@ -1,5 +1,6 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_img.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatefulWidget {
@@ -33,7 +34,7 @@ class _ProductItemState extends State<ProductItem> {
         ),
         const SizedBox(height: 14),
         Text(
-          widget.name ?? "Graphic Design",
+          widget.name ?? AppLocalizations.of(context)!.product_name,
           style: const TextStyle(
               fontSize: 16,
               color: AppColors.textPrimaryColor,
@@ -41,7 +42,7 @@ class _ProductItemState extends State<ProductItem> {
         ),
         const SizedBox(height: 5),
         Text(
-          widget.department ?? "English Department",
+          widget.department ?? AppLocalizations.of(context)!.product_department,
           style: const TextStyle(
               fontSize: 14,
               color: AppColors.textSecondaryColor3,

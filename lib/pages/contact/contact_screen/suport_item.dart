@@ -1,4 +1,5 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -38,7 +39,7 @@ class _SupportItemState extends State<SupportItem> {
           ),
           const SizedBox(height: 20),
           Text(
-            "Get Support",
+            AppLocalizations.of(context)!.contact_get_support,
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
@@ -55,9 +56,9 @@ class _SupportItemState extends State<SupportItem> {
                 ),
               ),
               onPressed: () {},
-              child: const Text(
-                "Submit Request",
-                style: TextStyle(
+              child: Text(
+                 AppLocalizations.of(context)!.contact_submit_request,
+                style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: AppColors.primaryColor),

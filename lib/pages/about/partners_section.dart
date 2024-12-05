@@ -1,5 +1,6 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_brand_list.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class PartnersSection extends StatelessWidget {
@@ -13,21 +14,26 @@ class PartnersSection extends StatelessWidget {
       child: const Column(
         children: [
           Text(
-            "Big Companies Are Here",
-            style: TextStyle(
+             AppLocalizations.of(context)!.about_big_company,
+            style: const TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.w700,
               color: AppColors.textPrimaryColor,
             ),
           ),
-          SizedBox(height: 30),
-          Text(
-            "Problems trying to resolve the conflict between \nthe two major realms of Classical physics: Newtonian mechanics ",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.textMediumGrayColor,
+          const SizedBox(height: 30),
+          SizedBox(
+            width: 547,
+            child: Text(
+              AppLocalizations.of(context)!.about_partner,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.textMediumGrayColor,
+              ),
             ),
           ),
           SizedBox(height: 50),
