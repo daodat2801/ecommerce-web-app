@@ -1,59 +1,61 @@
-import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:ecommerce_web_app/commons/constants/app_img.dart';
+import 'package:ecommerce_web_app/services/about_us_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 
-
-class MeetOurTeamSection extends StatelessWidget {
+class MeetOurTeamSection extends ConsumerWidget {
   const MeetOurTeamSection({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-      color: const Color(0xFFFFFFFF),
-      child: const Column(
-        children: [
-          Text(
-            "Meet Our Team",
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.w700,
-              color: Color(0xFF252B42),
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "Problems trying to resolve the conflict between\nthe two major realms of Classical physics: Newtonian mechanics",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: Color(0xFF737373),
-            ),
-          ),
-          SizedBox(height: 100),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  Widget build(BuildContext context, WidgetRef ref) {
+    final meetOurTeamAsync = ref.watch(meetOurTeamProvider);
+
+    return meetOurTeamAsync.when(
+      data: (meetOurTeam) {
+        return Container(
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+          color: AppColors.white,
+          child: Column(
             children: [
-              TeamMember(
-                imageUrl: "assets/images/team_1_user_1.png",
-                name: "Anna Johnson",
-                profession: "Designer",
+              Text(
+                meetOurTeam.title,
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textPrimaryColor,
+                ),
               ),
-              TeamMember(
-                imageUrl: "assets/images/team_1_user_2.png",
-                name: "John Doe",
-                profession: "Developer",
+              const SizedBox(height: 10),
+              Text(
+                meetOurTeam.description,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.textMediumGrayColor,
+                ),
               ),
-              TeamMember(
-                imageUrl: "assets/images/team_1_user_3.png",
-                name: "Emily Davis",
-                profession: "Manager",
+              const SizedBox(height: 100),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: meetOurTeam.teamMembers.map((member) {
+                  return TeamMember(
+                    imageUrl: AppImage.team1User3,
+                    name: member.username,
+                    profession: member.profession,
+                  );
+                }).toList(),
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (error, stackTrace) =>
+          const Center(child: Text('Something went wrong')),
     );
   }
 }
@@ -104,11 +106,11 @@ class TeamMember extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(AppSvgs.icFbBlue,height: 16,width: 16 ),
+            SvgPicture.asset(AppSvgs.icFbBlue, height: 16, width: 16),
             const SizedBox(width: 5),
-            SvgPicture.asset(AppSvgs.icIgBlue,height: 16,width: 16 ),
+            SvgPicture.asset(AppSvgs.icIgBlue, height: 16, width: 16),
             const SizedBox(width: 5),
-            SvgPicture.asset(AppSvgs.icTwBlue,height: 16,width: 16 ),
+            SvgPicture.asset(AppSvgs.icTwBlue, height: 16, width: 16),
           ],
         ),
       ],
