@@ -11,7 +11,7 @@ class ShopScreenViewModel extends StateNotifier<ShopScreenState> {
 
   Future<void> fetchProducts() async {
     try {
-      await Future.delayed(const Duration(seconds: 4));
+      await Future.delayed(const Duration(seconds: 7));
       final products = await _repository.loadProducts();
       state = state.copyWith(
         products: products,

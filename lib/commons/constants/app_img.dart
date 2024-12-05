@@ -30,4 +30,5 @@ class AppImage {
       'assets/images/scenic_image_with_play_button_overlay.png';
   static const String about = 'assets/images/about_title.png';
   static const String workWithUs = "assets/images/work_with_us.png";
+  static const String clothHome = "assets/images/cloth7.jpg";
 }
