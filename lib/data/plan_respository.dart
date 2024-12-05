@@ -21,8 +21,7 @@ class PlanRespository {
       .map((plan) => Plan.fromJson(plan))
       .toList();
 } catch (e) {
-  print("Error fetching plans: $e");
-  return [];
+  throw Exception(e);
 }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/enums.dart';
 import 'package:ecommerce_web_app/commons/constants/route_path.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
+import 'package:ecommerce_web_app/commons/widgets/display_select_language_dropdown.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_search_bar.dart';
 import 'package:ecommerce_web_app/services/authentication_management.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
@@ -10,6 +11,7 @@ import 'package:go_router/go_router.dart';
 import '../constants/app_color.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'header_menu_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Header extends ConsumerWidget {
   final bool isExpanded;
@@ -22,7 +24,10 @@ class Header extends ConsumerWidget {
     final headerViewModel = ref.watch(ViewModelProvider.headerVMProvider);
     final favoriteProductCount = headerViewModel.favoriteProductCount;
     final cartProductCount = headerViewModel.cartProductCount;
-    final welcomeText = user == null ? "Login / Register" : user.name;
+    final localization = AppLocalizations.of(context)!;
+
+    final welcomeText =
+        user == null ? localization.header_auth_login_regiter : user.name;
     return Column(
       children: [
         if (isExpanded) ...[
@@ -55,9 +60,9 @@ class Header extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 40),
-                    const Text(
-                      "Follow Us  and get a chance to win 80% off",
-                      style: TextStyle(
+                    Text(
+                      localization.header_flow,
+                      style: const TextStyle(
                         color: AppColors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
@@ -68,9 +73,9 @@ class Header extends ConsumerWidget {
                 const Spacer(),
                 Row(
                   children: [
-                    const Text(
-                      "Follow Us  :",
-                      style: TextStyle(
+                    Text(
+                      localization.header_follow_us,
+                      style: const TextStyle(
                         color: AppColors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
@@ -105,6 +110,8 @@ class Header extends ConsumerWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(width: 15),
+                    const DisplaySelectLanguageDropdown()
                   ],
                 ),
               ],
@@ -118,9 +125,9 @@ class Header extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                "Bandage",
-                style: TextStyle(
+              Text(
+                localization.header_logo_text,
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
                   color: AppColors.textPrimaryColor,
@@ -132,41 +139,41 @@ class Header extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       HeaderMenuItem(
-                          title: "Home",
+                          title: localization.header_navigation_home,
                           onClick: () {
                             _onClickHeaderMenuItem(
                                 context, HeaderMenuItemType.home);
                           }),
                       HeaderMenuItem(
-                        title: "Shop",
+                        title: localization.header_navigation_shop,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.shop);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "About",
+                        title: localization.header_navigation_about,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.about);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "Blog",
+                        title: localization.header_navigation_blog,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.blog);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "Contact",
+                        title: localization.header_navigation_contact,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.contact);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "Pages",
+                        title: localization.header_navigation_pages,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.team);
@@ -208,28 +215,28 @@ class Header extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       HeaderMenuItem(
-                        title: "Home",
+                        title: localization.header_navigation_home,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.home);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "Product",
+                        title: localization.header_navigation_product,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.shop);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "Pricing",
+                        title: localization.header_navigation_pricing,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.pricing);
                         },
                       ),
                       HeaderMenuItem(
-                        title: "Contact",
+                        title: localization.header_navigation_contact,
                         onClick: () {
                           _onClickHeaderMenuItem(
                               context, HeaderMenuItemType.contact);
@@ -246,9 +253,9 @@ class Header extends ConsumerWidget {
                         onPressed: () {
                           context.go(RoutePath.login);
                         },
-                        child: const Text(
-                          "Login",
-                          style: TextStyle(
+                        child: Text(
+                          localization.header_auth_login,
+                          style: const TextStyle(
                             color: AppColors.primaryColor,
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
@@ -270,18 +277,18 @@ class Header extends ConsumerWidget {
                           onTap: () {
                             context.go(RoutePath.login);
                           },
-                          child: const Row(
+                          child: Row(
                             children: [
                               Text(
-                                "Become a member",
-                                style: TextStyle(
+                                localization.header_auth_become_a_member,
+                                style: const TextStyle(
                                   color: AppColors.white,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                              SizedBox(width: 15),
-                              Icon(
+                              const SizedBox(width: 15),
+                              const Icon(
                                 Icons.arrow_forward,
                                 color: AppColors.white,
                                 size: 20,
