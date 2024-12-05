@@ -3,47 +3,49 @@ import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FeaturePostsSection extends StatelessWidget {
   const FeaturePostsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+        final localization = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 195, vertical: 60),
       color: Colors.white,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Practice Advice",
-            style: TextStyle(
+            localization.home_feature_posts_title_1,
+            style: const TextStyle(
               color: AppColors.primaryBlue,
               fontSize: 14,
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
-            "Featured Posts",
-            style: TextStyle(
+            localization.home_feature_posts_title_2,
+            style: const TextStyle(
               color: AppColors.textPrimaryColor,
               fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
-            "Problems trying to resolve the conflict between \nthe two major realms of Classical physics: Newtonian mechanics",
+            localization.home_feature_posts_desc,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: AppColors.textMediumGrayColor,
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
           ),
-          SizedBox(height: 40),
-          Row(
+          const SizedBox(height: 40),
+          const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

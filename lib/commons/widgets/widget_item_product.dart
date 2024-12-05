@@ -62,7 +62,9 @@ class _ProductItemState extends State<ProductItem> {
             Text(
               "\$${widget.discountedPrice ?? "6.48"}",
               style: const TextStyle(
-                  fontSize: 16, color: AppColors.textNumber, fontWeight: FontWeight.w700),
+                  fontSize: 16,
+                  color: AppColors.textNumber,
+                  fontWeight: FontWeight.w700),
             ),
           ],
         ),
@@ -84,13 +86,14 @@ class _ProductItemState extends State<ProductItem> {
   }
 
   Widget _buildCircle({required Color color}) {
-    return Container(
+    return Expanded(
+        child: Container(
       width: 16,
       height: 16,
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.circle,
       ),
-    );
+    ));
   }
 }

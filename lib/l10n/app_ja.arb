@@ -135,5 +135,23 @@
   "team_what_we_do": "私たちの提供するもの",
   "team_innovation_tailored_for_you": "あなたのためにカスタマイズされた革新",
   "team_home": "ホーム",
-  "team_team": "チーム"
+  "team_team": "チーム",
+
+  "home_shop_now": "今すぐ購入",
+  "home_category": "カテゴリー",
+  "home_choose_cate_txt": "ここでカテゴリーを選択...",
+  "home_men": "メンズ",
+  "home_women": "ウィメンズ",
+  "home_accessories": "アクセサリー",
+  "home_kid": "キッズ",
+  "home_promote_product_title": "ニューロユニバースの一部",
+  "home_promote_product_desc": "大きな物体がどのように動作するかは分かりますが、小さなスケールのものは違います。",
+  "home_buy_now": "今すぐ購入",
+  "home_read_more": "もっと読む",
+  "home_feature_posts_title_1": "実践アドバイス",  
+  "home_feature_posts_title_2": "特集記事",  
+  "home_feature_posts_desc": "ニュートン力学など古典物理学の\n二大領域間の対立を解決しようとする問題",  
+  "home_best_sell_product_title_1": "特集商品",  
+  "home_best_sell_product_title_2": "ベストセラー商品",  
+  "home_best_sell_product_desc": "対立を解決しようとする問題"  
 }

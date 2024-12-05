@@ -3,9 +3,11 @@ import 'package:ecommerce_web_app/pages/shop/shop_screen_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ShopScreenViewModel extends StateNotifier<ShopScreenState> {
-  final ProductRepository _repository = ProductRepository();
+  final ProductRepository _repository;
 
-  ShopScreenViewModel() : super(ShopScreenState.initial()) {
+  ShopScreenViewModel({required ProductRepository repository})
+      : _repository = repository,
+        super(ShopScreenState.initial()) {
     fetchProducts();
   }
 
