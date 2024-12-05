@@ -15,8 +15,8 @@ class PricingScreen extends ConsumerWidget {
   const PricingScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final faqState = ref.watch(ViewModelProvider.faqScreenVMProvider);
-    ref.read(ViewModelProvider.faqScreenVMProvider.notifier).fetchFaqs();
+    final faqState = ref.watch(ViewModelProvider.pricingScreenVMProvider);
+    ref.read(ViewModelProvider.pricingScreenVMProvider.notifier).fetchFaqs();
     return Scaffold(
       appBar: AppBar(
         title: const Header(),
@@ -45,9 +45,9 @@ class PricingScreen extends ConsumerWidget {
                 title: "Pricing FAQs",
                 description:
                     "Problems trying to resolve the conflict between the two major realms of Classical physics",
-                questions: faqState.faqs.isEmpty
+                questions: faqState.faqState.faqs.isEmpty
                     ? []
-                    : faqState.faqs
+                    : faqState.faqState.faqs
                         .map((faq) =>
                             {"question": faq.question, "answer": faq.answer})
                         .toList()),

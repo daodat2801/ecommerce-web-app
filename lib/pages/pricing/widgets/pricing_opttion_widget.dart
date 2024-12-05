@@ -93,10 +93,11 @@ class PricingSwitch extends ConsumerWidget {
   const PricingSwitch({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isYearly = ref.watch(ViewModelProvider.pricingProvider); // Read state
+    final isYearly =
+        ref.watch(ViewModelProvider.pricingScreenVMProvider.select((state) => state.isPricingToggled));
     return InkWell(
       onTap: () {
-        ref.read(ViewModelProvider.pricingProvider.notifier).toggle();
+        ref.read(ViewModelProvider.pricingScreenVMProvider.notifier).togglePricing();
       },
       child: Container(
         width: 45,

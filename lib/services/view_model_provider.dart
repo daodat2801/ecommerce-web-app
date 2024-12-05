@@ -36,23 +36,13 @@ class ViewModelProvider {
   });
 
   static final productDetailViewModelProvider =
-  StateNotifierProvider<ProductDetailViewModel, ProductScreenState>((ref) {
+      StateNotifierProvider<ProductDetailViewModel, ProductScreenState>((ref) {
     final repository = ref.watch(productDetailRepositoryProvider);
     return ProductDetailViewModel(repository: repository);
   });
 
-  static final faqScreenVMProvider =
-      StateNotifierProvider<ListFAQs, FAQState>((ref) {
-    return ListFAQs();
-  });
-
-  static final pricingProvider =
-      StateNotifierProvider<PricingStateNotifier, bool>((ref) {
-    return PricingStateNotifier();
-  });
-
-  static final planScreenVMProvider =
-      StateNotifierProvider<ListPlans, PlanState>((ref) {
-    return ListPlans();
+  static final pricingScreenVMProvider =
+      StateNotifierProvider<PricingScreenViewmodel, PricingState>((ref) {
+    return PricingScreenViewmodel();
   });
 }
