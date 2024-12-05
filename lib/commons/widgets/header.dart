@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/enums.dart';
 import 'package:ecommerce_web_app/commons/constants/route_path.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
+import 'package:ecommerce_web_app/commons/widgets/widget_search_bar.dart';
 import 'package:ecommerce_web_app/services/authentication_management.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
@@ -176,7 +177,7 @@ class Header extends ConsumerWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset(AppSvgs.icSearch, height: 16, width: 16),
+                    const SizedBox(width: 200, child: ProductSearchBar()),
                     const SizedBox(width: 15),
                     SvgPicture.asset(AppSvgs.icCart, height: 16, width: 16),
                     const SizedBox(width: 5),
