@@ -1,30 +1,32 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.only(bottom: 48, right: 176, left: 176),
       child: Row(
         children: [
           _buildStack(
-              imgPath: AppImage.cloth1, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth1, title: localization.shop_cloths, itemCount: localization.shop_items_count),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImage.cloth2, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth2, title: localization.shop_cloths, itemCount: localization.shop_items_count),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImage.cloth3, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth3, title: localization.shop_cloths, itemCount: localization.shop_items_count),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImage.cloth4, title: "CLOTHS", itemCount: "5 items"),
+              imgPath: AppImage.cloth4, title: localization.shop_cloths, itemCount: localization.shop_items_count),
           const SizedBox(width: 15),
           _buildStack(
-              imgPath: AppImage.cloth5, title: "CLOTHS", itemCount: "5 items")
+              imgPath: AppImage.cloth5, title: localization.shop_cloths, itemCount: localization.shop_items_count),
         ],
       ),
     );

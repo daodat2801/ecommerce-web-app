@@ -1,11 +1,13 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PageButton extends StatelessWidget {
   const PageButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Container(
       width: 330,
       height: 74,
@@ -21,7 +23,7 @@ class PageButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           // First Button
-          _buildPageButton('First', Colors.grey, Colors.transparent),
+          _buildPageButton(localization.shop_first, Colors.grey, Colors.transparent),
           const VerticalDivider(
             color: AppColors.textSecondaryColor2,
             thickness: 1.35,
@@ -34,7 +36,7 @@ class PageButton extends StatelessWidget {
             color: AppColors.textSecondaryColor2,
             thickness: 1.35,
           ),
-          _buildPageButton('Next', AppColors.primaryColor, Colors.transparent),
+          _buildPageButton(localization.shop_next, AppColors.primaryColor, Colors.transparent),
         ],
       ),
     );

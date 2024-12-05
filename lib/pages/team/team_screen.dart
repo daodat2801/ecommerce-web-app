@@ -8,6 +8,7 @@ import 'package:ecommerce_web_app/pages/team/widgets/card_item_widget.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TeamScreen extends ConsumerWidget {
   const TeamScreen({super.key});
@@ -17,6 +18,7 @@ class TeamScreen extends ConsumerWidget {
     ref
         .read(ViewModelProvider.teamScreenVMProvider.notifier)
         .fetchTeamMembers();
+    final localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         title: const Header(),
@@ -27,7 +29,7 @@ class TeamScreen extends ConsumerWidget {
             const BannerTextWidget(),
             const BannerImageWidget(),
             const SizedBox(height:112),
-            const Text('Meet Our Team',
+             Text(localization.team_meet_our_team,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 40,
@@ -43,7 +45,7 @@ class TeamScreen extends ConsumerWidget {
               height: 383 * (teamState.teamMembers.length / 3),
               width: 1034,
               child: teamState.teamMembers.isEmpty
-                  ? const Text('Empty')
+                  ?  Text(localization.team_empty)
                   : GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),

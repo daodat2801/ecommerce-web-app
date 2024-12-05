@@ -2,6 +2,7 @@ import 'package:ecommerce_web_app/commons/constants/route_path.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_item_product.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductGrid extends StatelessWidget {
   final List products;
@@ -10,6 +11,7 @@ class ProductGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
       return GridView.builder(
         padding: const EdgeInsets.only(top: 48, left: 175, right: 175),
         shrinkWrap: true,

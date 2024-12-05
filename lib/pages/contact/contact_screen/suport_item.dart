@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SupportItem extends StatefulWidget {
   final bool isDark;
@@ -19,6 +20,7 @@ class SupportItem extends StatefulWidget {
 class _SupportItemState extends State<SupportItem> {
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Container(
       color: widget.isDark ? AppColors.textPrimaryColor : AppColors.white,
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 80),
@@ -32,19 +34,15 @@ class _SupportItemState extends State<SupportItem> {
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
-                color: widget.isDark
-                    ? AppColors.white
-                    : AppColors.textPrimaryColor),
+                color: widget.isDark ? AppColors.white : AppColors.textPrimaryColor),
           ),
           const SizedBox(height: 20),
           Text(
-            "Get Support",
+            localization.contact_get_support,
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
-                color: widget.isDark
-                    ? AppColors.white
-                    : AppColors.textPrimaryColor),
+                color: widget.isDark ? AppColors.white : AppColors.textPrimaryColor),
           ),
           const SizedBox(height: 30),
           OutlinedButton(
@@ -55,9 +53,9 @@ class _SupportItemState extends State<SupportItem> {
                 ),
               ),
               onPressed: () {},
-              child: const Text(
-                "Submit Request",
-                style: TextStyle(
+              child: Text(
+                localization.contact_submit_request,
+                style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: AppColors.primaryColor),

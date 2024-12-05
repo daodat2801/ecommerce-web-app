@@ -7,12 +7,14 @@ import 'package:ecommerce_web_app/pages/contact/contact_screen/suport_item.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactScreen extends ConsumerWidget {
   const ContactScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final localization = AppLocalizations.of(context)!;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -23,26 +25,26 @@ class ContactScreen extends ConsumerWidget {
               width: double.infinity,
               color: AppColors.white,
               padding: const EdgeInsets.symmetric(vertical: 40),
-              child: const Column(
+              child: Column(
                 children: [
                   Text(
-                    "VISIT OUR OFFICE",
-                    style: TextStyle(
+                    localization.contact_tittle_visit,
+                    style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
-                    "We help small businesses\nwith big ideas",
+                    localization.contact_we_help,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor),
                   ),
-                  SizedBox(height: 40),
-                  Row(
+                  const SizedBox(height: 40),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SupportItem(isDark: false, icon: AppSvgs.icPhoneBlue),
@@ -61,18 +63,18 @@ class ContactScreen extends ConsumerWidget {
                 children: [
                   SvgPicture.asset(AppSvgs.icArrowBlue, width: 72),
                   const SizedBox(height: 15),
-                  const Text(
-                    "WE Can't WAIT TO MEET YOU",
-                    style: TextStyle(
+                   Text(
+                      localization.contact_we_wait_meet,
+                    style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    "Let’s Talk",
+                   Text(
+                    localization.contact_let,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 58,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor),
@@ -86,11 +88,12 @@ class ContactScreen extends ConsumerWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                      child:
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                         child: Text(
-                          "Try it free now",
-                          style: TextStyle(
+                          localization.freetrial_button,
+                          style: const TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w700,
                               color: AppColors.white),
