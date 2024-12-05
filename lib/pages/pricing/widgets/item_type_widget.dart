@@ -83,7 +83,7 @@ class ItemTypeWidget extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '$price',
+                price,
                 style: const TextStyle(
                   color: AppColors.primaryBlue,
                   fontSize: 40,

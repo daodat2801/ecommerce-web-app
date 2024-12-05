@@ -103,10 +103,10 @@ class HoverItem extends StatefulWidget {
   const HoverItem({super.key, required this.productItem});
 
   @override
-  _HoverItemState createState() => _HoverItemState();
+  HoverItemState createState() => HoverItemState();
 }
 
-class _HoverItemState extends State<HoverItem> {
+class HoverItemState extends State<HoverItem> {
   double scale = 1.0;
 
   @override

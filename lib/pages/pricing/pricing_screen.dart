@@ -27,10 +27,10 @@ class PricingScreen extends ConsumerWidget {
           children: [
             const SizedBox(height: 13),
             const BannerWidget(),
-            Container(
+            const SizedBox(
               width: double.infinity,
               height: 1100,
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   PricingOpttionWidget(),

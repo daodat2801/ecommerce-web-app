@@ -9,10 +9,10 @@ class HoverIconButton extends StatefulWidget {
       {super.key, required this.iconPath, required this.onTap});
 
   @override
-  _HoverIconButtonState createState() => _HoverIconButtonState();
+  HoverIconButtonState createState() => HoverIconButtonState();
 }
 
-class _HoverIconButtonState extends State<HoverIconButton> {
+class HoverIconButtonState extends State<HoverIconButton> {
   double scale = 1.0;
 
   @override

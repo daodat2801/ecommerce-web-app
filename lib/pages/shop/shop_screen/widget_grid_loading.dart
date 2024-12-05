@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class LoadingGrid extends StatelessWidget {
-  const LoadingGrid({Key? key}) : super(key: key);
+  const LoadingGrid({super.key});
 
   @override
   Widget build(BuildContext context) {

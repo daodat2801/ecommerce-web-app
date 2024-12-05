@@ -13,10 +13,10 @@ class HoverButton extends StatefulWidget {
   });
 
   @override
-  _HoverButtonState createState() => _HoverButtonState();
+  HoverButtonState createState() => HoverButtonState();
 }
 
-class _HoverButtonState extends State<HoverButton> {
+class HoverButtonState extends State<HoverButton> {
   double scale = 1.0;
 
   @override

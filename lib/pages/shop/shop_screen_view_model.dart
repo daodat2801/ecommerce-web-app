@@ -17,7 +17,7 @@ class ShopScreenViewModel extends StateNotifier<ShopScreenState> {
         products: products,
       );
     } catch (e) {
-      print("Error fetching products: $e");
+      throw Exception(e);
     }
   }
 }
