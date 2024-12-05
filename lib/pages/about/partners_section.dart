@@ -1,3 +1,4 @@
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_brand_list.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class PartnersSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
-      color: const Color(0xFFFAFAFA),
+      color: AppColors.grayBackgroundColor,
       child: const Column(
         children: [
           Text(
@@ -16,8 +17,7 @@ class PartnersSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.w700,
-              //#252B42
-              color: Color(0xFF252B42),
+              color: AppColors.textPrimaryColor,
             ),
           ),
           SizedBox(height: 30),
@@ -27,7 +27,7 @@ class PartnersSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: Color(0xFF737373),
+              color: AppColors.textMediumGrayColor,
             ),
           ),
           SizedBox(height: 50),

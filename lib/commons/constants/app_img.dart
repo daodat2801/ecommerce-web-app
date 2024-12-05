@@ -25,4 +25,9 @@ class AppImage {
   static const String post1 = 'assets/images/post1.png';
   static const String post2 = 'assets/images/post2.png';
   static const String post3 = 'assets/images/post3.png';
+  static const String team1User3 = 'assets/images/team_1_user_3.png';
+  static const String video =
+      'assets/images/scenic_image_with_play_button_overlay.png';
+  static const String about = 'assets/images/about_title.png';
+  static const String workWithUs = "assets/images/work_with_us.png";
 }

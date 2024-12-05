@@ -25,4 +25,12 @@ class HeaderViewModel extends StateNotifier<HeaderState> {
   int getFavoriteProductCount() {
     return state.favoriteProductCount;
   }
+
+  void updateSelectedLanguage(String languageCode) {
+    state = state.copyWith(selectedLanguage: languageCode);
+  }
+
+  String getSelectedLanguage() {
+    return state.selectedLanguage;
+  }
 }

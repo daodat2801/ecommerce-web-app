@@ -105,6 +105,22 @@ class Header extends ConsumerWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(width: 15),
+                    DropdownButton<String>(
+                      value: headerViewModel.selectedLanguage,
+                      items: const [
+                        DropdownMenuItem(value: 'en', child: Text('En')),
+                        DropdownMenuItem(value: 'vi', child: Text('Vi')),
+                        DropdownMenuItem(value: 'fr', child: Text('Fr')),
+                      ],
+                      style: const TextStyle(color: AppColors.white),
+                      dropdownColor:  AppColors.textPrimaryColor,
+                      onChanged: (value) {
+                        if (value != null) {
+                          ref.read(ViewModelProvider.headerVMProvider.notifier).updateSelectedLanguage(value);
+                        }
+                      },
+                    ),
                   ],
                 ),
               ],
