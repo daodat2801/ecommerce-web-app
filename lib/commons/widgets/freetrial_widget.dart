@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:flutter/material.dart';

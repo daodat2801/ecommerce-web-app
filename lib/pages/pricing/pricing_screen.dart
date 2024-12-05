@@ -3,9 +3,10 @@ import 'package:ecommerce_web_app/commons/widgets/freetrial_widget.dart';
 import 'package:ecommerce_web_app/commons/widgets/header.dart';
 import 'package:ecommerce_web_app/pages/pricing/widgets/banner_widget.dart';
 import 'package:ecommerce_web_app/pages/pricing/widgets/brands_widget.dart';
-import 'package:ecommerce_web_app/pages/pricing/widgets/item_type_widget.dart';
+import 'package:ecommerce_web_app/pages/pricing/widgets/list_item_type_widget.dart';
 import 'package:ecommerce_web_app/pages/pricing/widgets/pricing_faqs.dart';
 import 'package:ecommerce_web_app/pages/pricing/widgets/pricing_opttion_widget.dart';
+import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,7 +14,9 @@ class PricingScreen extends ConsumerWidget {
   //key
   const PricingScreen({super.key});
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final faqState = ref.watch(ViewModelProvider.faqScreenVMProvider);
+    ref.read(ViewModelProvider.faqScreenVMProvider.notifier).fetchFaqs();
     return Scaffold(
       appBar: AppBar(
         title: const Header(),
@@ -32,93 +35,22 @@ class PricingScreen extends ConsumerWidget {
                 children: [
                   PricingOpttionWidget(),
                   SizedBox(height: 48),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      ItemTypeWidget(
-                          name: "Free",
-                          price: "19.99",
-                          currency: "\$",
-                          period: "Per Month",
-                          features: [
-                            "Unlimited product updates",
-                            "Unlimited integrations",
-                            "1GB Cloud storage",
-                            "Email and community support"
-                          ],
-                          cta: "Try for free",
-                          isFree: true),
-                      ItemTypeWidget(
-                        name: "Standard",
-                        price: "19.99",
-                        currency: "\$",
-                        period: "Per Month",
-                        features: [
-                          "Unlimited product updates",
-                          "Unlimited integrations",
-                          "1GB Cloud storage",
-                          "Email and community support"
-                        ],
-                        cta: "Try for free",
-                        isChoice: true,
-                      ),
-                      ItemTypeWidget(
-                        name: "Premium",
-                        price: "19.99",
-                        currency: "\$",
-                        period: "Per Month",
-                        features: [
-                          "Unlimited product updates",
-                          "Unlimited integrations",
-                          "1GB Cloud storage",
-                          "Email and community support"
-                        ],
-                        cta: "Try for free",
-                      ),
-                    ],
-                  ),
+                  ListItemTypeWidget(),
                 ],
               ),
             ),
             const BrandsWidget(),
             //PricingOpttionWidget(),
-            const PricingFaqs(
+            PricingFaqs(
                 title: "Pricing FAQs",
                 description:
                     "Problems trying to resolve the conflict between the two major realms of Classical physics",
-                questions: [
-                  {
-                    "question": "The quick fox jumps over the lazy dog",
-                    "answer":
-                        "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amen"
-                  },
-                  {
-                    "question": "The quick fox jumps over the lazy dog",
-                    "answer":
-                        "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud ame"
-                  },
-                  {
-                    "question": "The quick fox jumps over the lazy dog",
-                    "answer":
-                        "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud ame"
-                  },
-                  {
-                    "question": "The quick fox jumps over the lazy dog",
-                    "answer":
-                        "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud ame"
-                  },
-                  {
-                    "question": "The quick fox jumps over the lazy dog",
-                    "answer":
-                        "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud ame"
-                  },
-                  {
-                    "question": "The quick fox jumps over the lazy dog",
-                    "answer":
-                        "Met minim Mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud ame"
-                  },
-                ]),
+                questions: faqState.faqs.isEmpty
+                    ? []
+                    : faqState.faqs
+                        .map((faq) =>
+                            {"question": faq.question, "answer": faq.answer})
+                        .toList()),
             const SizedBox(height: 24),
             const PricingFreetrialWidget(),
             const Footer(),

@@ -1,6 +1,8 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
-class ItemTypeWidget extends StatelessWidget {
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class ItemTypeWidget extends ConsumerWidget {
   final String name;
   final String price;
   final String currency;
@@ -9,7 +11,13 @@ class ItemTypeWidget extends StatelessWidget {
   final String cta;
   final bool? isChoice;
   final bool? isFree;
-
+  static List<String> defaultFeatures = [
+    "Unlimited product updates",
+    "Unlimited integrations",
+    "1GB Cloud storage",
+    "Email and community support",
+    "Many Thing"
+  ];
   const ItemTypeWidget({
     super.key,
     required this.name,
@@ -23,145 +31,147 @@ class ItemTypeWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        //
-      },
-      child: Container(
-        width: 327,
-        height: isChoice == false ? 664 : 700,
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
-        decoration: BoxDecoration(
-          color: isChoice == false ? Colors.white : AppColors.productColorBlack,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: AppColors.primaryBlue,
-            width: 1,
-          ),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 4,
-              offset: Offset(0, 2),
-            ),
-          ],
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Container(
+      width: 327,
+      height: isChoice == false ? 664 : 700,
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
+      decoration: BoxDecoration(
+        color: isChoice == false ? Colors.white : AppColors.productColorBlack,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: AppColors.primaryBlue,
+          width: 1,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              name,
-              style: TextStyle(
-                color: isChoice == false
-                    ? AppColors.productColorBlack
-                    : Colors.white,
-                fontSize: 24,
-                height: 32 / 24,
-                letterSpacing: 0.1,
-                fontWeight: FontWeight.w700,
-              ),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 4,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            name,
+            style: TextStyle(
+              color: isChoice == false
+                  ? AppColors.productColorBlack
+                  : Colors.white,
+              fontSize: 24,
+              height: 32 / 24,
+              letterSpacing: 0.1,
+              fontWeight: FontWeight.w700,
             ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '$price',
-                  style: TextStyle(
-                    color: isChoice == false
-                        ? AppColors.productColorBlack
-                        : Colors.white,
-                    fontSize: 58,
-                    height: 80 / 58,
-                    letterSpacing: 0.2,
-                    fontWeight: FontWeight.w700,
-                  ),
+          ),
+          const SizedBox(height: 35),
+          Text(
+            'Organize across all\n apps by hand',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 16,
+                height: 24 / 14,
+                letterSpacing: 0.1,
+                color: isChoice == false
+                    ? AppColors.textMediumGrayColor
+                    : Colors.white),
+          ),
+          const SizedBox(height: 35),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '$price',
+                style: const TextStyle(
+                  color: AppColors.primaryBlue,
+                  fontSize: 40,
+                  height: 50 / 40,
+                  letterSpacing: 0.2,
+                  fontWeight: FontWeight.w700,
                 ),
-                const SizedBox(width: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      currency,
-                      style: TextStyle(
-                        color: isChoice == false
-                            ? AppColors.productColorBlack
-                            : Colors.white,
-                        fontSize: 24,
-                        height: 32 / 24,
-                        letterSpacing: 0.1,
-                        fontWeight: FontWeight.w700,
-                      ),
+              ),
+              const SizedBox(width: 8),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    currency,
+                    style: const TextStyle(
+                      color: AppColors.primaryBlue,
+                      fontSize: 24,
+                      height: 32 / 24,
+                      letterSpacing: 0.1,
+                      fontWeight: FontWeight.w700,
                     ),
-                    Text(
-                      period,
-                      style: TextStyle(
-                        fontSize: 16,
-                        height: 24 / 16,
+                  ),
+                  Text(
+                    period,
+                    style: const TextStyle(
+                        fontSize: 14,
+                        height: 22 / 16,
                         letterSpacing: 0.1,
-                        color: isChoice == false
-                            ? AppColors.productColorBlack
-                            : Colors.white,
+                        color: AppColors.primaryBlue),
+                  ),
+                ],
+              )
+            ],
+          ),
+          const SizedBox(height: 16),
+          const SizedBox(height: 16),
+          ...defaultFeatures.map((defaultFeature) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.check_circle,
+                      color: features.contains(defaultFeature)
+                          ? Colors.green
+                          : AppColors.textSecondaryColor2,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        defaultFeature,
+                        style: TextStyle(
+                          color: isChoice == false
+                              ? AppColors.productColorBlack
+                              : Colors.white,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ],
-                )
-              ],
-            ),
-            const SizedBox(height: 16),
-            ...features.map((feature) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.check_circle,
-                        color: Colors.green,
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          feature,
-                          style: TextStyle(
-                            color: isChoice == false
-                                ? AppColors.productColorBlack
-                                : Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )),
-            const SizedBox(height: 16),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                width: 246,
-                height: 52,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                decoration: BoxDecoration(
-                  color: isFree == true
-                      ? AppColors.productColorBlack
-                      : AppColors.primaryBlue,
-                  borderRadius: BorderRadius.circular(5),
                 ),
-                child: const Text(
-                  'Try for free',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    letterSpacing: 0.2,
-                    fontWeight: FontWeight.bold,
-                    height: 22 / 14,
-                    fontSize: 14,
-                  ),
+              )),
+          const SizedBox(height: 16),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              width: 246,
+              height: 52,
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+              decoration: BoxDecoration(
+                color: isFree == true
+                    ? AppColors.productColorBlack
+                    : AppColors.primaryBlue,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: const Text(
+                'Try for free',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 0.2,
+                  fontWeight: FontWeight.bold,
+                  height: 22 / 14,
+                  fontSize: 14,
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

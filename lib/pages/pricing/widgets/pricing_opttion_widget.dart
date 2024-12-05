@@ -1,5 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class PricingOpttionWidget extends StatelessWidget {
   //key
@@ -31,10 +33,10 @@ class PricingOpttionWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Row(
+              Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
+                  const Text(
                     'Monthly',
                     style: TextStyle(
                       fontSize: 16,
@@ -44,10 +46,10 @@ class PricingOpttionWidget extends StatelessWidget {
                       color: AppColors.productColorBlack,
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   PricingSwitch(),
-                  SizedBox(width: 8),
-                  Text(
+                  const SizedBox(width: 8),
+                  const Text(
                     'Yearly',
                     style: TextStyle(
                       fontSize: 16,
@@ -68,8 +70,7 @@ class PricingOpttionWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(37),
-                  border:
-                      Border.all(color: AppColors.textBlueColor, width: 1),
+                  border: Border.all(color: AppColors.textBlueColor, width: 1),
                 ),
                 child: const Text(
                   'Save 25%',
@@ -88,23 +89,14 @@ class PricingOpttionWidget extends StatelessWidget {
   }
 }
 
-class PricingSwitch extends StatefulWidget {
+class PricingSwitch extends ConsumerWidget {
   const PricingSwitch({super.key});
-
   @override
-  State<PricingSwitch> createState() => _PricingSwitchState();
-}
-
-class _PricingSwitchState extends State<PricingSwitch> {
-  bool isYearly = false;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isYearly = ref.watch(ViewModelProvider.pricingProvider); // Read state
     return InkWell(
       onTap: () {
-        setState(() {
-          isYearly = !isYearly;
-        });
+        ref.read(ViewModelProvider.pricingProvider.notifier).toggle();
       },
       child: Container(
         width: 45,
@@ -115,7 +107,7 @@ class _PricingSwitchState extends State<PricingSwitch> {
             width: 1,
             color: AppColors.primaryBlue,
           ),
-          color: isYearly ? Colors.blue : Colors.white,
+          color: Colors.white,
         ),
         child: Stack(
           children: [
@@ -126,9 +118,9 @@ class _PricingSwitchState extends State<PricingSwitch> {
               child: Container(
                 width: 19,
                 height: 19,
-                decoration:  const BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.circleButtonColor2,
+                  color: AppColors.circleButtonColor,
                   border: Border.fromBorderSide(
                     BorderSide(
                       color: AppColors.borderSwitchColor,
