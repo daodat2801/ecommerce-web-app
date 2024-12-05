@@ -24,7 +24,7 @@ class ProductGrid extends StatelessWidget {
         itemCount: products.length,
         itemBuilder: (context, index) {
           final product = products[index];
-          return InkWell(
+          return GestureDetector(
             onTap: (){
               context.go(RoutePath.product);
             },

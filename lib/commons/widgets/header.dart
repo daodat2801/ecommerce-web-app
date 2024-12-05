@@ -110,156 +110,151 @@ class Header extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 195, vertical: 20),
           color: AppColors.white,
           child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text(
-                  "Bandage",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 24,
-                    color: AppColors.textPrimaryColor,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Bandage",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24,
+                  color: AppColors.textPrimaryColor,
+                ),
+              ),
+              if (isExpanded) ...[
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      HeaderMenuItem(
+                          title: "Home",
+                          onClick: () {
+                            _onClickHeaderMenuItem(context, HeaderMenuItemType.home);
+                          }),
+                      HeaderMenuItem(
+                        title: "Shop",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.shop);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "About",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.about);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "Blog",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.blog);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "Contact",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.contact);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "Pages",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.team);
+                        },
+                      ),
+                    ],
                   ),
                 ),
-                if (isExpanded) ...[
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        HeaderMenuItem(
-                            title: "Home",
-                            onClick: () {
-                              _onClickHeaderMenuItem(
-                                  context, HeaderMenuItemType.home);
-                            }),
-                        HeaderMenuItem(
-                          title: "Shop",
-                          onClick: () {
-                            _onClickHeaderMenuItem(
-                                context, HeaderMenuItemType.shop);
-                          },
-                        ),
-                        HeaderMenuItem(
-                          title: "About",
-                          onClick: () {
-                            _onClickHeaderMenuItem(
-                                context, HeaderMenuItemType.about);
-                          },
-                        ),
-                        HeaderMenuItem(
-                          title: "Blog",
-                          onClick: () {
-                            _onClickHeaderMenuItem(
-                                context, HeaderMenuItemType.blog);
-                          },
-                        ),
-                        HeaderMenuItem(
-                          title: "Contact",
-                          onClick: () {
-                            _onClickHeaderMenuItem(
-                                context, HeaderMenuItemType.contact);
-                          },
-                        ),
-                        HeaderMenuItem(
-                          title: "Pages",
-                          onClick: () {
-                            _onClickHeaderMenuItem(
-                                context, HeaderMenuItemType.pages);
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                  if (isExpanded) ...[
-                    Row(
-                      children: [
-                        SvgPicture.asset(AppSvgs.icSearch,
-                            height: 16, width: 16),
-                        const SizedBox(width: 15),
-                        SvgPicture.asset(AppSvgs.icCart, height: 16, width: 16),
-                        const SizedBox(width: 5),
-                        const Text(
-                          "1",
-                          style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        SvgPicture.asset(AppSvgs.icHeart,
-                            height: 16, width: 16),
-                        const SizedBox(width: 5),
-                        const Text(
-                          "1",
-                          style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ] else ...[
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          HeaderMenuItem(
-                            title: "Home",
-                            onClick: () {
-                              _onClickHeaderMenuItem(
-                                  context, HeaderMenuItemType.home);
-                            },
-                          ),
-                          HeaderMenuItem(
-                            title: "Product",
-                            onClick: () {
-                              _onClickHeaderMenuItem(
-                                  context, HeaderMenuItemType.shop);
-                            },
-                          ),
-                          HeaderMenuItem(
-                            title: "Pricing",
-                            onClick: () {
-                              _onClickHeaderMenuItem(
-                                  context, HeaderMenuItemType.pages);
-                            },
-                          ),
-                          HeaderMenuItem(
-                            title: "Contact",
-                            onClick: () {
-                              _onClickHeaderMenuItem(
-                                  context, HeaderMenuItemType.home);
-                            },
-                          ),
-                        ],
+                Row(
+                  children: [
+                    SvgPicture.asset(AppSvgs.icSearch, height: 16, width: 16),
+                    const SizedBox(width: 15),
+                    SvgPicture.asset(AppSvgs.icCart, height: 16, width: 16),
+                    const SizedBox(width: 5),
+                    const Text(
+                      "1",
+                      style: TextStyle(
+                        color: AppColors.primaryColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Row(
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "Login",
-                            style: TextStyle(
-                              color: AppColors.primaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                            ),
+                    const SizedBox(width: 15),
+                    SvgPicture.asset(AppSvgs.icHeart, height: 16, width: 16),
+                    const SizedBox(width: 5),
+                    const Text(
+                      "1",
+                      style: TextStyle(
+                        color: AppColors.primaryColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ] else ...[
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      HeaderMenuItem(
+                        title: "Home",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.home);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "Product",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.shop);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "Pricing",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.pricing);
+                        },
+                      ),
+                      HeaderMenuItem(
+                        title: "Contact",
+                        onClick: () {
+                          _onClickHeaderMenuItem(context, HeaderMenuItemType.contact);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                Visibility(
+                  visible: user == null,
+                  child: Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          context.go(RoutePath.login);
+                        },
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(
+                            color: AppColors.primaryColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        const SizedBox(width: 10),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 25, vertical: 25),
+                      ),
+                      const SizedBox(width: 10),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.primaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
                           ),
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            context.go(RoutePath.login);
+                          },
                           child: const Row(
                             children: [
                               Text(
@@ -279,11 +274,13 @@ class Header extends ConsumerWidget {
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                  ]
-                ],
-              ]),
+                      ),
+                    ],
+                  ),
+                ),
+              ]
+            ],
+          ),
         ),
       ],
     );
@@ -310,6 +307,10 @@ class Header extends ConsumerWidget {
       case HeaderMenuItemType.contact:
         {
           context.go(RoutePath.contact);
+        }
+      case HeaderMenuItemType.team:
+        {
+          context.go(RoutePath.team);
         }
       default:
     }
