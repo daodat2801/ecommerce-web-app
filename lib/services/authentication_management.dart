@@ -36,7 +36,7 @@ class AuthenticationManagement extends StateNotifier<AuthenState> {
 
   void startSession(String token) {
     state.sessionTimer?.cancel();
-    state.sessionTimer = Timer(const Duration(seconds: 10), closeSession);
+    state.sessionTimer = Timer(const Duration(seconds: 1200), closeSession);
   }
 
   void closeSession() {
