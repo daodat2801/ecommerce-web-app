@@ -1,22 +1,17 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
-import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/widgets/footer.dart';
 import 'package:ecommerce_web_app/commons/widgets/header.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_grid_loading.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_grid_product.dart';
-import 'package:ecommerce_web_app/commons/widgets/widget_item_product.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/background_card.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/category_session.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/feature_posts_section.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/promote_product_section.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/promote_product_sliders_section.dart';
-import 'package:ecommerce_web_app/pages/shop/shop_screen_state.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../commons/constants/route_path.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
