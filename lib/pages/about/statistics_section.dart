@@ -1,82 +1,93 @@
+import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:ecommerce_web_app/services/about_us_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class StatisticsSection extends StatelessWidget {
+class StatisticsSection extends ConsumerWidget {
   const StatisticsSection({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 195),
-      color: const Color(0xFFFFFFFF),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget build(BuildContext context, WidgetRef ref) {
+    final statisticsAsync = ref.watch(statisticsProvider);
+
+    return statisticsAsync.when(
+      data: (statistics) {
+        return Container(
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 195),
+          color: AppColors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Problems trying",
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Problems trying",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.textRedColor,
+                          ),
+                        ),
+                        SizedBox(height: 24),
+                        Text(
+                          "Met minim Mollie non desert\nAlamo est sit cliquey dolor do \nmet sent.",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.productColorBlack,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: Text(
+                      "Problems trying to resolve the conflict between the two major realms of\nClassical physics: Newtonian mechanics.",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xFFE74040),
+                        color: AppColors.textSecondaryColor3,
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Met minim Mollie non desert\nAlamo est sit cliquey dolor do \nmet sent.",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFF252B42),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 20),
-              Expanded(
-                child: Text(
-                  "Problems trying to resolve the conflict between the two major realms of\nClassical physics: Newtonian mechanics.",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    // #737373
-                    color: Color(0xFF737373),
                   ),
-                ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  StatisticItem(
+                    number: statistics.happyCustomers,
+                    description: "Happy Customers",
+                  ),
+                  StatisticItem(
+                    number: statistics.monthlyVisitors,
+                    description: "Monthly Visitors",
+                  ),
+                  StatisticItem(
+                    number: statistics.countriesWorldwide,
+                    description: "Countries Worldwide",
+                  ),
+                  StatisticItem(
+                    number: statistics.topPartners,
+                    description: "Top Partners",
+                  ),
+                ],
               ),
             ],
           ),
-          SizedBox(height: 40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              StatisticItem(
-                number: "15K",
-                description: "Happy Customers",
-              ),
-              StatisticItem(
-                number: "150K",
-                description: "Monthly Visitors",
-              ),
-              StatisticItem(
-                number: "15",
-                description: "Countries Worldwide",
-              ),
-              StatisticItem(
-                number: "100+",
-                description: "Top Partners",
-              ),
-            ],
-          ),
-        ],
-      ),
+        );
+      },
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (error, stackTrace) =>
+          const Center(child: Text('Something went wrong')),
     );
   }
 }
@@ -100,7 +111,7 @@ class StatisticItem extends StatelessWidget {
           style: const TextStyle(
             fontSize: 58,
             fontWeight: FontWeight.w700,
-            color: Color(0xFF252B42),
+            color: AppColors.textPrimaryColor,
           ),
         ),
         const SizedBox(height: 5),
@@ -110,7 +121,7 @@ class StatisticItem extends StatelessWidget {
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w700,
-            color: Color(0xFF737373),
+            color: AppColors.textMediumGrayColor,
           ),
         ),
       ],
