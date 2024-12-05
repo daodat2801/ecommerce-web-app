@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SupportItem extends StatefulWidget {
-  bool isDark;
-  String icon;
+  final bool isDark;
+  final String icon;
 
-  SupportItem({
+  const SupportItem({
     required this.isDark,
     required this.icon,
     super.key,
@@ -32,7 +32,9 @@ class _SupportItemState extends State<SupportItem> {
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
-                color: widget.isDark ? AppColors.white : AppColors.textPrimaryColor),
+                color: widget.isDark
+                    ? AppColors.white
+                    : AppColors.textPrimaryColor),
           ),
           const SizedBox(height: 20),
           Text(
@@ -40,7 +42,9 @@ class _SupportItemState extends State<SupportItem> {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
-                color: widget.isDark ? AppColors.white : AppColors.textPrimaryColor),
+                color: widget.isDark
+                    ? AppColors.white
+                    : AppColors.textPrimaryColor),
           ),
           const SizedBox(height: 30),
           OutlinedButton(

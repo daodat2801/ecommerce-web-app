@@ -76,7 +76,7 @@ class TeamMember extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 230,
           width: 330,
           child: Image.asset(

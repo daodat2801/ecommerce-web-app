@@ -6,8 +6,7 @@ import 'package:go_router/go_router.dart';
 class ProductGrid extends StatelessWidget {
   final List products;
 
-  const ProductGrid({Key? key, required this.products})
-      : super(key: key);
+  const ProductGrid({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {

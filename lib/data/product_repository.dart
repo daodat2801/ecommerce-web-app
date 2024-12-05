@@ -23,7 +23,6 @@ class ProductRepository {
 
       return productItems.map((product) => Product.fromJson(product)).toList();
     } catch (e) {
-      print('Error loading products: $e');
       return [];
     }
   }

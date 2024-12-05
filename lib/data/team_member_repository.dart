@@ -11,7 +11,6 @@ class TeamMemberRepository {
       Map<String, dynamic> data = json.decode(response);
       final List<dynamic> teamMembersData =
           data['meetOurTeamSection']?['teamMembers'] ?? [];
-      print(teamMembersData);
       return teamMembersData
           .map((teamMember) => TeamMember.fromJson(teamMember))
           .toList();

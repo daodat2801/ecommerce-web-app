@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/models/fetch_data_state.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../commons/constants/app_color.dart';
 import '../../../models/product_detail_model.dart';
@@ -33,13 +34,15 @@ class BestSellerProductsSection extends ConsumerWidget {
   }
 
   Widget _buildFailure(String errorMessage, BuildContext context) {
-    Future.microtask(() {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Failed to fetch product details: $errorMessage'),
-          backgroundColor: Colors.red,
-        ),
-      );
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      if (ScaffoldMessenger.maybeOf(context) != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to fetch product details: $errorMessage'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
     });
 
     return const SizedBox.shrink();

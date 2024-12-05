@@ -33,10 +33,10 @@ class PricingOpttionWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
+                  Text(
                     'Monthly',
                     style: TextStyle(
                       fontSize: 16,
@@ -46,10 +46,10 @@ class PricingOpttionWidget extends StatelessWidget {
                       color: AppColors.productColorBlack,
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8),
                   PricingSwitch(),
-                  const SizedBox(width: 8),
-                  const Text(
+                  SizedBox(width: 8),
+                  Text(
                     'Yearly',
                     style: TextStyle(
                       fontSize: 16,

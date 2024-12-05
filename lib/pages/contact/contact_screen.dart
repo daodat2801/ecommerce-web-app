@@ -1,16 +1,9 @@
-import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/widgets/footer.dart';
 import 'package:ecommerce_web_app/commons/widgets/header.dart';
-import 'package:ecommerce_web_app/commons/widgets/widget_item_product.dart';
-import 'package:ecommerce_web_app/commons/widgets/widget_brand_list.dart';
 import 'package:ecommerce_web_app/pages/contact/contact_screen/contact_section.dart';
 import 'package:ecommerce_web_app/pages/contact/contact_screen/suport_item.dart';
-import 'package:ecommerce_web_app/pages/shop/shop_screen/widget_category_list.dart';
-import 'package:ecommerce_web_app/pages/shop/shop_screen/widget_grid_product.dart';
-import 'package:ecommerce_web_app/pages/shop/shop_screen/widget_page_button.dart';
-import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -30,17 +23,17 @@ class ContactScreen extends ConsumerWidget {
               width: double.infinity,
               color: AppColors.white,
               padding: const EdgeInsets.symmetric(vertical: 40),
-              child: Column(
+              child: const Column(
                 children: [
-                  const Text(
+                  Text(
                     "VISIT OUR OFFICE",
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor),
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
+                  SizedBox(height: 10),
+                  Text(
                     "We help small businesses\nwith big ideas",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -48,7 +41,7 @@ class ContactScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimaryColor),
                   ),
-                  const SizedBox(height: 40),
+                  SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

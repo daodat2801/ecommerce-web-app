@@ -7,10 +7,10 @@ class SelectColorSection extends StatefulWidget {
   const SelectColorSection({super.key, required this.listProductColor});
 
   @override
-  _SelectColorSectionState createState() => _SelectColorSectionState();
+  SelectColorSectionState createState() => SelectColorSectionState();
 }
 
-class _SelectColorSectionState extends State<SelectColorSection> {
+class SelectColorSectionState extends State<SelectColorSection> {
   int? selectedIndex;
   int? hoveredIndex;
 
