@@ -1,5 +1,7 @@
+import 'package:ecommerce_web_app/commons/constants/route_path.dart';
 import 'package:ecommerce_web_app/commons/widgets/widget_item_product.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductGrid extends StatelessWidget {
   final List products;
@@ -22,12 +24,17 @@ class ProductGrid extends StatelessWidget {
         itemCount: products.length,
         itemBuilder: (context, index) {
           final product = products[index];
-          return ProductItem(
-            image: product.image,
-            name: product.name,
-            department: product.department,
-            originalPrice: product.originalPrice.toString(),
-            discountedPrice: product.discountedPrice.toString(),
+          return InkWell(
+            onTap: (){
+              context.go(RoutePath.product);
+            },
+            child: ProductItem(
+              image: product.image,
+              name: product.name,
+              department: product.department,
+              originalPrice: product.originalPrice.toString(),
+              discountedPrice: product.discountedPrice.toString(),
+            ),
           );
         },
       );

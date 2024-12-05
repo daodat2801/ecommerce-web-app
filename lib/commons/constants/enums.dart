@@ -6,6 +6,7 @@ enum ProductType {
 enum HeaderMenuItemType {
   home,
   shop,
+  productDetail,
   about,
   blog,
   contact,

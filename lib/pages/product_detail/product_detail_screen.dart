@@ -13,20 +13,22 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        color: AppColors.grayBackgroundColor,
-        child: const Column(
-          children: [
-            Header(isExpanded: true),
-            DisplayCurrentPage(),
-            ProductInfoSection(),
-            ProductDescriptionSection(),
-            BestSellerProductsSection(),
-            BrandList(),
-            Footer(),
-          ],
-        )
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          color: AppColors.grayBackgroundColor,
+          child: const Column(
+            children: [
+              Header(isExpanded: true),
+              DisplayCurrentPage(),
+              ProductInfoSection(),
+              ProductDescriptionSection(),
+              BestSellerProductsSection(),
+              BrandList(),
+              Footer(),
+            ],
+          )
+        ),
       ),
     );
   }
