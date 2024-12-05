@@ -77,28 +77,56 @@
                 "department": "English Department",
                 "originalPrice": 16.48,
                 "discountedPrice": 6.48,
-                "image": "product1.png"
+                "image": "best_seller_product_1.png"
               },
               {
                 "name": "Graphic Design",
                 "department": "English Department",
                 "originalPrice": 16.48,
                 "discountedPrice": 6.48,
-                "image": "product2.png"
+                "image": "best_seller_product_2.png"
               },
               {
                 "name": "Graphic Design",
                 "department": "English Department",
                 "originalPrice": 16.48,
                 "discountedPrice": 6.48,
-                "image": "product3.png"
+                "image": "best_seller_product_3.png"
               },
               {
                 "name": "Graphic Design",
                 "department": "English Department",
                 "originalPrice": 16.48,
                 "discountedPrice": 6.48,
-                "image": "product4.png"
+                "image": "best_seller_product_4.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "best_seller_product_5.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "best_seller_product_6.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "best_seller_product_1.png"
+              },
+              {
+                "name": "Graphic Design",
+                "department": "English Department",
+                "originalPrice": 16.48,
+                "discountedPrice": 6.48,
+                "image": "best_seller_product_2.png"
               }
             ]
           }

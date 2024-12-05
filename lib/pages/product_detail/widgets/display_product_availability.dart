@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 enum ProductAvailabilityStatus { inStock, outOfStock }
 
 class DisplayProductAvailability extends StatelessWidget {
-  final ProductAvailabilityStatus status;
+  final ProductAvailabilityStatus? status;
+  final String availability;
 
-  const DisplayProductAvailability({super.key, required this.status});
+  const DisplayProductAvailability(
+      {super.key, this.status, required this.availability});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +26,9 @@ class DisplayProductAvailability extends StatelessWidget {
           ),
         ),
         Text(
-          availabilityText,
+          availabilityText ?? availability,
           style: TextStyle(
-            color: availabilityColor,
+            color: availabilityColor ?? AppColors.textBlueColor,
             fontWeight: FontWeight.w700,
             fontSize: 14,
           ),
@@ -35,7 +37,10 @@ class DisplayProductAvailability extends StatelessWidget {
     );
   }
 
-  String _getAvailabilityText(ProductAvailabilityStatus status) {
+  String? _getAvailabilityText(ProductAvailabilityStatus? status) {
+    if (status == null) {
+      return null;
+    }
     switch (status) {
       case ProductAvailabilityStatus.inStock:
         return 'In Stock';
@@ -44,7 +49,10 @@ class DisplayProductAvailability extends StatelessWidget {
     }
   }
 
-  Color _getAvailabilityColor(ProductAvailabilityStatus status) {
+  Color? _getAvailabilityColor(ProductAvailabilityStatus? status) {
+    if (status == null) {
+      return null;
+    }
     switch (status) {
       case ProductAvailabilityStatus.inStock:
         return AppColors.textBlueColor;
