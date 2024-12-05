@@ -2,6 +2,7 @@ import 'package:ecommerce_web_app/commons/constants/enums.dart';
 import 'package:ecommerce_web_app/commons/constants/route_path.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:ecommerce_web_app/services/authentication_management.dart';
+import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -17,6 +18,9 @@ class Header extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(authenManagerProvider).user;
+    final headerViewModel = ref.watch(ViewModelProvider.headerVMProvider);
+    final favoriteProductCount = headerViewModel.favoriteProductCount;
+    final cartProductCount = headerViewModel.cartProductCount;
     final welcomeText = user == null ? "Login / Register" : user.name;
     return Column(
       children: [
@@ -129,36 +133,42 @@ class Header extends ConsumerWidget {
                       HeaderMenuItem(
                           title: "Home",
                           onClick: () {
-                            _onClickHeaderMenuItem(context, HeaderMenuItemType.home);
+                            _onClickHeaderMenuItem(
+                                context, HeaderMenuItemType.home);
                           }),
                       HeaderMenuItem(
                         title: "Shop",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.shop);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.shop);
                         },
                       ),
                       HeaderMenuItem(
                         title: "About",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.about);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.about);
                         },
                       ),
                       HeaderMenuItem(
                         title: "Blog",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.blog);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.blog);
                         },
                       ),
                       HeaderMenuItem(
                         title: "Contact",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.contact);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.contact);
                         },
                       ),
                       HeaderMenuItem(
                         title: "Pages",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.team);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.team);
                         },
                       ),
                     ],
@@ -170,9 +180,9 @@ class Header extends ConsumerWidget {
                     const SizedBox(width: 15),
                     SvgPicture.asset(AppSvgs.icCart, height: 16, width: 16),
                     const SizedBox(width: 5),
-                    const Text(
-                      "1",
-                      style: TextStyle(
+                    Text(
+                      '$cartProductCount',
+                      style: const TextStyle(
                         color: AppColors.primaryColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
@@ -181,9 +191,9 @@ class Header extends ConsumerWidget {
                     const SizedBox(width: 15),
                     SvgPicture.asset(AppSvgs.icHeart, height: 16, width: 16),
                     const SizedBox(width: 5),
-                    const Text(
-                      "1",
-                      style: TextStyle(
+                    Text(
+                      '$favoriteProductCount',
+                      style: const TextStyle(
                         color: AppColors.primaryColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
@@ -199,25 +209,29 @@ class Header extends ConsumerWidget {
                       HeaderMenuItem(
                         title: "Home",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.home);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.home);
                         },
                       ),
                       HeaderMenuItem(
                         title: "Product",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.shop);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.shop);
                         },
                       ),
                       HeaderMenuItem(
                         title: "Pricing",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.pricing);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.pricing);
                         },
                       ),
                       HeaderMenuItem(
                         title: "Contact",
                         onClick: () {
-                          _onClickHeaderMenuItem(context, HeaderMenuItemType.contact);
+                          _onClickHeaderMenuItem(
+                              context, HeaderMenuItemType.contact);
                         },
                       ),
                     ],
@@ -248,8 +262,8 @@ class Header extends ConsumerWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 25, vertical: 25),
                         ),
                         child: GestureDetector(
                           onTap: () {

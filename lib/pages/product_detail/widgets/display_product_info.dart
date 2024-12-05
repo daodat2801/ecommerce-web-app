@@ -1,10 +1,10 @@
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:ecommerce_web_app/models/fetch_data_state.dart';
-import 'package:ecommerce_web_app/pages/product_detail/provider/product_detail_view_model_provider.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/display_product_availability.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/display_product_price.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/product_rating_section.dart';
 import 'package:ecommerce_web_app/pages/product_detail/widgets/select_color_section.dart';
+import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../commons/constants/app_color.dart';
@@ -17,7 +17,8 @@ class DisplayProductInfo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final viewModel = ref.watch(productDetailViewModelProvider);
+    final viewModel =
+        ref.watch(ViewModelProvider.productDetailViewModelProvider);
     final fetchProductDetailState = viewModel.fetchProductDetail;
 
     return Container(
@@ -31,7 +32,7 @@ class DisplayProductInfo extends ConsumerWidget {
                   (fetchProductDetailState as Failure).error, context)
               : fetchProductDetailState is Success
                   ? _buildProductDetails(
-                      (fetchProductDetailState as Success).data)
+                      (fetchProductDetailState as Success).data, ref)
                   : const SizedBox.shrink(), // Default if no state matches
     );
   }
@@ -55,7 +56,9 @@ class DisplayProductInfo extends ConsumerWidget {
     return const SizedBox.shrink();
   }
 
-  Widget _buildProductDetails(ProductDetail data) {
+  Widget _buildProductDetails(ProductDetail data, WidgetRef ref) {
+    final headerViewModel =
+        ref.watch(ViewModelProvider.headerVMProvider.notifier);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -102,11 +105,19 @@ class DisplayProductInfo extends ConsumerWidget {
                 buttonLabel: 'Select Options',
               ),
               const SizedBox(width: 10),
-              const HoverIconButton(iconPath: AppSvgs.iconHeart),
+              HoverIconButton(
+                  iconPath: AppSvgs.iconHeart,
+                  onTap: () {
+                    headerViewModel.increaseFavoriteProduct();
+                  }),
               const SizedBox(width: 10),
-              const HoverIconButton(iconPath: AppSvgs.iconCart),
+              HoverIconButton(
+                  iconPath: AppSvgs.iconCart,
+                  onTap: () {
+                    headerViewModel.increaseCartProduct();
+                  }),
               const SizedBox(width: 10),
-              const HoverIconButton(iconPath: AppSvgs.iconEye),
+              HoverIconButton(iconPath: AppSvgs.iconEye, onTap: () {}),
               const SizedBox(width: 10),
             ],
           ),
