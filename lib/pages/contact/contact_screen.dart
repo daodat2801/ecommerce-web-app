@@ -24,7 +24,7 @@ class ContactScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Header(isExpanded: true),
+            const Header(isExpanded: false),
             const ContactSection(),
             Container(
               width: double.infinity,

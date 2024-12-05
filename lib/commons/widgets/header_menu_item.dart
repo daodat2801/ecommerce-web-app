@@ -5,14 +5,15 @@ import '../constants/app_color.dart';
 class HeaderMenuItem extends StatelessWidget {
   final String title;
   final Function? onClick;
+
   const HeaderMenuItem({super.key, required this.title, this.onClick});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: GestureDetector(
-        onTap: () {
+      child: TextButton(
+        onPressed: () {
           if (onClick != null) {
             onClick!();
           }
