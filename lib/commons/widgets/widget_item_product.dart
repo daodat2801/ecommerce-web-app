@@ -68,7 +68,7 @@ class _ProductItemState extends State<ProductItem> {
         ),
         const SizedBox(height: 5),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 70),
+          padding: const EdgeInsets.symmetric(horizontal: 100),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

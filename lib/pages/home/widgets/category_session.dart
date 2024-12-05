@@ -1,4 +1,5 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/commons/utils/extensions.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/category_card.dart';
 import 'package:flutter/material.dart';
@@ -41,25 +42,25 @@ class CategorySession extends StatelessWidget {
               children: const [
                 CategoryCard(
                   name: "MEN",
-                  imagePath: "assets/images/grey_background.png",
+                  imagePath: AppImage.cloth1,
                   cellsOfHeight: 2,
                   cellsOfWidth: 2,
                 ),
                 CategoryCard(
                   name: "WOMEN",
-                  imagePath: "assets/images/grey_background.png",
+                  imagePath: AppImage.cloth5,
                   cellsOfHeight: 2,
                   cellsOfWidth: 1,
                 ),
                 CategoryCard(
                   name: "ACCESSORIES",
-                  imagePath: "assets/images/grey_background.png",
+                  imagePath: AppImage.cloth3,
                   cellsOfHeight: 1,
                   cellsOfWidth: 1,
                 ),
                 CategoryCard(
                   name: "KIDS",
-                  imagePath: "assets/images/grey_background.png",
+                  imagePath: AppImage.cloth4,
                   cellsOfHeight: 1,
                   cellsOfWidth: 1,
                 ),
