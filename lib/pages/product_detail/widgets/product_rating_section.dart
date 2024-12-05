@@ -1,6 +1,7 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductRatingSection extends StatelessWidget {
   final double ratingValue;
@@ -11,6 +12,7 @@ class ProductRatingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -52,14 +54,14 @@ class ProductRatingSection extends StatelessWidget {
           const SizedBox(width: 10),
           numberOfReviews <= 1
               ? Text(
-                  '$numberOfReviews Review',
+                  '$numberOfReviews ${localization.review}',
                   style: const TextStyle(
                       color: AppColors.textMediumGrayColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w700),
                 )
               : Text(
-                  '$numberOfReviews Reviews',
+                  '$numberOfReviews ${localization.reviews}',
                   style: const TextStyle(
                       color: AppColors.textMediumGrayColor,
                       fontSize: 14,

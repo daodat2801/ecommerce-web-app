@@ -3,6 +3,7 @@ import 'package:ecommerce_web_app/pages/product_detail/widgets/product_feature_l
 import 'package:ecommerce_web_app/pages/product_detail/widgets/product_image.dart';
 import 'package:flutter/material.dart';
 import '../../../commons/constants/app_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductDescriptionSection extends StatelessWidget {
   const ProductDescriptionSection({super.key});
@@ -37,18 +38,20 @@ class DescriptionTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    final localization = AppLocalizations.of(context)!;
+    return SizedBox(
       height: 72,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          DescriptionTabItem(label: 'Description'),
-          SizedBox(width: 48),
-          DescriptionTabItem(label: 'Additional Information', isActive: true),
-          SizedBox(width: 48),
-          DescriptionTabItem(label: 'Reviews'),
-          SizedBox(width: 8),
-          Text(
+          DescriptionTabItem(label: localization.description),
+          const SizedBox(width: 48),
+          DescriptionTabItem(
+              label: localization.additional_information, isActive: true),
+          const SizedBox(width: 48),
+          DescriptionTabItem(label: localization.reviews),
+          const SizedBox(width: 8),
+          const Text(
             '(0)',
             style: TextStyle(
               color: AppColors.textColorGreen,

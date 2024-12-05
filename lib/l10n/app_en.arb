@@ -97,5 +97,16 @@
   "footer_hint_mail":"Your Email",
   "footer_subscribe":"Subscribe",
   "footer_lorem":"Lorem imp sum dolor Amit",
-  "footer_made_with_love": "Made With Love By Finland All Rights Reserved"
+  "footer_made_with_love": "Made With Love By Finland All Rights Reserved",
+
+  "product_detail_fail_to_fetch_product_detail": "Failed to fetch product details: ",
+  "best_seller_product": "BESTSELLER PRODUCTS",
+  "availability": "Availability : ",
+  "description": "Description",
+  "additional_information": "Additional Information",
+  "reviews": "Reviews",
+  "the_quick_fox_jumps_over": "the quick fox jumps over",
+  "the_quick_fox_jumps_over_the_lazy_dog": "the quick fox jumps over the lazy dog",
+  "review": "Review",
+  "select_options": "Select Options"
 }

@@ -1,20 +1,22 @@
 import 'package:ecommerce_web_app/pages/product_detail/widgets/product_feature_item.dart';
 import 'package:flutter/material.dart';
 import '../../../commons/constants/app_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductFeatureList extends StatelessWidget {
   const ProductFeatureList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Flexible(
       flex: 1,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'the quick fox jumps over',
-            style: TextStyle(
+          Text(
+            localization.the_quick_fox_jumps_over,
+            style: const TextStyle(
               color: AppColors.textPrimaryColor,
               fontWeight: FontWeight.w700,
               fontSize: 24,
@@ -26,9 +28,9 @@ class ProductFeatureList extends StatelessWidget {
             if (i != 3) const SizedBox(height: 10),
           ],
           const SizedBox(height: 25),
-          const Text(
-            'the quick fox jumps over',
-            style: TextStyle(
+          Text(
+            localization.the_quick_fox_jumps_over,
+            style: const TextStyle(
               color: AppColors.textPrimaryColor,
               fontWeight: FontWeight.w700,
               fontSize: 24,

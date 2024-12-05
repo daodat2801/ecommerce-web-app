@@ -95,5 +95,16 @@
   "footer_hint_mail": "あなたのメール",
   "footer_subscribe": "購読",
   "footer_lorem": "Lorem imp sum dolor Amit",
-  "footer_made_with_love": "フィンランドから愛を込めて。全著作権所有。"
+  "footer_made_with_love": "フィンランドから愛を込めて。全著作権所有。",
+
+  "product_detail_fail_to_fetch_product_detail": "製品詳細の取得に失敗しました: ",
+  "best_seller_product": "ベストセラープロダクト",
+  "availability": "在庫状況 : ",
+  "description": "説明",
+  "additional_information": "追加情報",
+  "reviews": "レビュー",
+  "the_quick_fox_jumps_over": "素早いキツネが飛び越える",
+  "the_quick_fox_jumps_over_the_lazy_dog": "素早いキツネが怠惰な犬を飛び越える",
+  "review": "レビュー",
+  "select_options": "オプションを選択"
 }
