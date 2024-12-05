@@ -7,6 +7,7 @@ import 'package:ecommerce_web_app/pages/team/team_screen_viewmodel.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ViewModelProvider {
+  ViewModelProvider._();
   static final loginScreenVMProvider =
       StateNotifierProvider<LoginScreenViewModel, LoginScreenState>(
           (ref) => LoginScreenViewModel(LoginScreenState(), UserRepository()));

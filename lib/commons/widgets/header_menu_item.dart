@@ -4,14 +4,19 @@ import '../constants/app_color.dart';
 
 class HeaderMenuItem extends StatelessWidget {
   final String title;
-  const HeaderMenuItem({super.key, required this.title});
+  final Function? onClick;
+  const HeaderMenuItem({super.key, required this.title, this.onClick});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          if (onClick != null) {
+            onClick!();
+          }
+        },
         child: Text(
           title,
           style: const TextStyle(

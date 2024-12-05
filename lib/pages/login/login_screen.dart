@@ -1,10 +1,19 @@
+import 'package:ecommerce_web_app/commons/constants/route_path.dart';
+import 'package:ecommerce_web_app/commons/utils/app_alerts.dart';
+import 'package:ecommerce_web_app/commons/widgets/common_text_field.dart';
+import 'package:ecommerce_web_app/models/user.dart';
+import 'package:ecommerce_web_app/services/authentication_management.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends ConsumerWidget {
+  LoginScreen({super.key});
+  final userNameTextController = TextEditingController();
+  final passWordTextController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -45,81 +54,27 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "E-mail or phone number",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF282828),
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Enter your email or phone number",
-                      hintStyle: const TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFF949CA9),
-                        fontWeight: FontWeight.w400,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4),
-                        borderSide: const BorderSide(
-                          color: Color(0xFFFC424A),
-                          width: 1,
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
-                    ),
-                  ),
-                ],
+              CommonTextField(
+                title: "E-mail or phone number",
+                hintText: "Enter your email or phone number",
+                controller: userNameTextController,
               ),
               const SizedBox(height: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Password",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF282828),
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "Enter your password",
-                      hintStyle: const TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFF949CA9),
-                        fontWeight: FontWeight.w400,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4),
-                        borderSide: const BorderSide(
-                          color: Color(0xFFFC424A),
-                          width: 1,
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      suffixIcon: const Icon(
-                        Icons.visibility_outlined,
-                        color: Color(0xFF949CA9),
-                      ),
-                    ),
-                  ),
-                ],
+              CommonTextField(
+                title: "Password",
+                hintText: "Enter your password",
+                obscureText: true,
+                controller: passWordTextController,
+                suffixIcon: const Icon(
+                  Icons.visibility_outlined,
+                  color: Color(0xFF949CA9),
+                ),
               ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  _doLogin(context, ref);
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF2F93F6),
                   minimumSize: const Size.fromHeight(52),
@@ -181,5 +136,20 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _doLogin(BuildContext context, WidgetRef ref) async {
+    final userName = userNameTextController.text;
+    final passWord = passWordTextController.text;
+    final authented = await ref
+        .read(authenManagerProvider.notifier)
+        .authenLogin(
+            User(userName: userName, passWord: passWord, name: "datdt74"));
+
+    if (authented && context.mounted) {
+     context.go(RoutePath.home);
+    } else if (context.mounted) {
+      AppAlerts.displaySnackbar(context, "Username or Password is incorrect!!!");
+    }
   }
 }
