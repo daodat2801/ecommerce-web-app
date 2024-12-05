@@ -29,14 +29,14 @@ class _CircleIconButtonState extends State<CircleIconButton> {
           });
         });
 
-        widget.onTap();  // Call the onTap function
+        widget.onTap();
       },
       child: Container(
         width: 40,
         height: 40,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: _backgroundColor,  // Use the dynamic background color
+          color: _backgroundColor,
           border: Border.all(
             color: AppColors.circleButtonColor,
             width: 1,

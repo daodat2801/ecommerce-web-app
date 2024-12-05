@@ -6,22 +6,26 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../commons/constants/app_color.dart';
 import '../../../models/product_detail_model.dart';
 import 'best_seller_product_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BestSellerProductsSection extends ConsumerWidget {
   const BestSellerProductsSection({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
-    final viewModel = ref.watch(ViewModelProvider.productDetailViewModelProvider);
+    final viewModel =
+    ref.watch(ViewModelProvider.productDetailViewModelProvider);
     final fetchBestSellerState = viewModel.fetchBestSellerProducts;
+    final localization = AppLocalizations.of(context)!;
 
     if (fetchBestSellerState is Loading) {
       return _buildLoading();
     } else if (fetchBestSellerState is Failure) {
-      return _buildFailure((fetchBestSellerState as Failure).error, context);
+      return _buildFailure(
+          (fetchBestSellerState as Failure).error, context, localization);
     } else if (fetchBestSellerState is Success) {
       return _buildBestSellerProductList(
-          (fetchBestSellerState as Success).data);
+          (fetchBestSellerState as Success).data, localization);
     } else {
       return const SizedBox.shrink();
     }
@@ -30,15 +34,23 @@ class BestSellerProductsSection extends ConsumerWidget {
   Widget _buildLoading() {
     return Container(
       color: AppColors.grayBackgroundColor,
+      child: const Center(
+        child: CircularProgressIndicator(
+          color: AppColors.primaryBlue, // Set the color for the loader
+        ),
+      ),
     );
   }
 
-  Widget _buildFailure(String errorMessage, BuildContext context) {
+  Widget _buildFailure(String errorMessage, BuildContext context,
+      AppLocalizations localization) {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (ScaffoldMessenger.maybeOf(context) != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Failed to fetch product details: $errorMessage'),
+            content: Text(
+                '${localization.product_detail_fail_to_fetch_product_detail} '
+                    '$errorMessage'),
             backgroundColor: Colors.red,
           ),
         );
@@ -48,7 +60,8 @@ class BestSellerProductsSection extends ConsumerWidget {
     return const SizedBox.shrink();
   }
 
-  Widget _buildBestSellerProductList(List<BestSellerProduct> bestSellerProducts) {
+  Widget _buildBestSellerProductList(List<BestSellerProduct> bestSellerProducts,
+      AppLocalizations localization) {
     return Container(
       color: AppColors.grayBackgroundColor,
       width: double.infinity,
@@ -59,9 +72,9 @@ class BestSellerProductsSection extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'BESTSELLER PRODUCTS',
-                style: TextStyle(
+              Text(
+                localization.best_seller_product,
+                style: const TextStyle(
                   color: AppColors.textPrimaryColor,
                   fontSize: 24,
                   fontWeight: FontWeight.w700,

@@ -12,6 +12,7 @@ import '../../../commons/constants/app_color.dart';
 import '../../../models/product_detail_model.dart';
 import 'hover_button.dart';
 import 'hover_icon_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DisplayProductInfo extends ConsumerWidget {
   const DisplayProductInfo({super.key});
@@ -21,6 +22,7 @@ class DisplayProductInfo extends ConsumerWidget {
     final viewModel =
         ref.watch(ViewModelProvider.productDetailViewModelProvider);
     final fetchProductDetailState = viewModel.fetchProductDetail;
+    final localization = AppLocalizations.of(context)!;
 
     return Container(
       color: AppColors.grayBackgroundColor,
@@ -29,12 +31,14 @@ class DisplayProductInfo extends ConsumerWidget {
       child: fetchProductDetailState is Loading
           ? _buildLoading()
           : fetchProductDetailState is Failure
-              ? _buildFailure(
-                  (fetchProductDetailState as Failure).error, context)
+              ? _buildFailure((fetchProductDetailState as Failure).error,
+                  context, localization)
               : fetchProductDetailState is Success
                   ? _buildProductDetails(
-                      (fetchProductDetailState as Success).data, ref)
-                  : const SizedBox.shrink(), // Default if no state matches
+                      (fetchProductDetailState as Success).data,
+                      ref,
+                      localization)
+                  : const SizedBox.shrink(),
     );
   }
 
@@ -44,12 +48,18 @@ class DisplayProductInfo extends ConsumerWidget {
     );
   }
 
-  Widget _buildFailure(String errorMessage, BuildContext context) {
+  Widget _buildFailure(
+    String errorMessage,
+    BuildContext context,
+    AppLocalizations localization,
+  ) {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (ScaffoldMessenger.maybeOf(context) != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Failed to fetch product details: $errorMessage'),
+            content: Text(
+                '${localization.product_detail_fail_to_fetch_product_detail}'
+                '$errorMessage'),
             backgroundColor: Colors.red,
           ),
         );
@@ -59,7 +69,8 @@ class DisplayProductInfo extends ConsumerWidget {
     return const SizedBox.shrink();
   }
 
-  Widget _buildProductDetails(ProductDetail data, WidgetRef ref) {
+  Widget _buildProductDetails(
+      ProductDetail data, WidgetRef ref, AppLocalizations localization) {
     final headerViewModel =
         ref.watch(ViewModelProvider.headerVMProvider.notifier);
     return Column(
@@ -105,7 +116,7 @@ class DisplayProductInfo extends ConsumerWidget {
             children: [
               HoverButton(
                 onPress: () {},
-                buttonLabel: 'Select Options',
+                buttonLabel: localization.select_options,
               ),
               const SizedBox(width: 10),
               HoverIconButton(

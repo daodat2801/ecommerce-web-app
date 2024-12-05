@@ -1,5 +1,6 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 enum ProductAvailabilityStatus { inStock, outOfStock }
 
@@ -14,12 +15,13 @@ class DisplayProductAvailability extends StatelessWidget {
   Widget build(BuildContext context) {
     final availabilityText = _getAvailabilityText(status);
     final availabilityColor = _getAvailabilityColor(status);
+    final localization = AppLocalizations.of(context)!;
 
     return Row(
       children: [
-        const Text(
-          'Availability : ',
-          style: TextStyle(
+        Text(
+          localization.availability,
+          style: const TextStyle(
             color: AppColors.textMediumGrayColor,
             fontWeight: FontWeight.w700,
             fontSize: 14,
