@@ -124,7 +124,6 @@
   "team_innovation_tailored_for_you": "당신을 위한 혁신",
   "team_home": "홈",
   "team_team": "팀",
-  "footer_made_with_love": "핀란드에서 사랑으로 제작되었습니다. 모든 권리 보유.",
 
   "product_detail_fail_to_fetch_product_detail": "제품 세부정보를 가져오는 데 실패했습니다: ",
   "best_seller_product": "베스트셀러 제품",
@@ -135,5 +134,23 @@
   "the_quick_fox_jumps_over": "빠른 여우가 뛰어넘는다",
   "the_quick_fox_jumps_over_the_lazy_dog": "빠른 여우가 게으른 개를 뛰어넘는다",
   "review": "리뷰",
-  "select_options": "옵션 선택"
+  "select_options": "옵션 선택",
+
+  "home_shop_now": "지금 쇼핑하기",
+  "home_category": "카테고리",
+  "home_choose_cate_txt": "여기에서 카테고리를 선택하세요...",
+  "home_men": "남성",
+  "home_women": "여성",
+  "home_accessories": "액세서리",
+  "home_kid": "키즈",
+  "home_promote_product_title": "뉴럴 유니버스의 일부",
+  "home_promote_product_desc": "큰 물체가 어떻게 작동하는지는 알지만, 작은 규모에서는 다릅니다.",
+  "home_buy_now": "지금 구매",
+  "home_read_more": "더 읽기",
+  "home_feature_posts_title_1": "실천 조언",  
+  "home_feature_posts_title_2": "추천 게시물",  
+  "home_feature_posts_desc": "고전 물리학의 두 주요 영역인 \n뉴턴 역학 간의 갈등을 해결하려는 문제",  
+  "home_best_sell_product_title_1": "추천 제품",  
+  "home_best_sell_product_title_2": "베스트셀러 제품",  
+  "home_best_sell_product_desc": "갈등을 해결하려는 문제"  
 }

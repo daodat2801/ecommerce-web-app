@@ -1,11 +1,13 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PromoteProductSection extends StatelessWidget {
   const PromoteProductSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Container(
       color: AppColors.white,
       padding: const EdgeInsets.symmetric(vertical: 112, horizontal: 132),
@@ -32,18 +34,18 @@ class PromoteProductSection extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  "Part of the Neural\nUniverse",
-                  style: TextStyle(
+                Text(
+                  localization.home_promote_product_title,
+                  style: const TextStyle(
                     color: AppColors.textPrimaryColor,
                     fontSize: 40,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 15),
-                const Text(
-                  "We know how large objects will act,\nbut things on a small scale.",
-                  style: TextStyle(
+                Text(
+                  localization.home_promote_product_desc,
+                  style: const TextStyle(
                     color: AppColors.textMediumGrayColor,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
@@ -64,9 +66,9 @@ class PromoteProductSection extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      child: const Text(
-                        "BUY NOW",
-                        style: TextStyle(
+                      child: Text(
+                        localization.home_buy_now,
+                        style: const TextStyle(
                           fontSize: 14,
                           color: AppColors.white,
                           fontWeight: FontWeight.w700,
@@ -89,9 +91,9 @@ class PromoteProductSection extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
-                      child: const Text(
-                        "READ MORE",
-                        style: TextStyle(
+                      child: Text(
+                        localization.home_read_more,
+                        style: const TextStyle(
                           fontSize: 14,
                           color: AppColors.productColorGreen,
                           fontWeight: FontWeight.w700,

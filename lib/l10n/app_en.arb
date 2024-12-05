@@ -136,5 +136,23 @@
   "team_what_we_do": "WHAT WE DO",
   "team_innovation_tailored_for_you": "Innovation tailored for you",
   "team_home": "Home",
-  "team_team": "Team"
+  "team_team": "Team",
+  
+  "home_shop_now": "Shop now",
+  "home_category": "Category",
+  "home_choose_cate_txt": "Choose your category here...",
+  "home_men": "MEN",
+  "home_women": "home_women",
+  "home_accessories": "home_accessories",
+  "home_kid": "home_kidS",
+  "home_promote_product_title": "Part of the Neural\nUniverse",
+  "home_promote_product_desc": "We know how large objects will act,\nbut things on a small scale.",
+  "home_buy_now": "BUY NOW",
+  "home_read_more": "READ MORE",
+  "home_feature_posts_title_1": "Practice Advice",
+  "home_feature_posts_title_2": "Featured Posts",
+  "home_feature_posts_desc": "Problems trying to resolve the conflict between \nthe two major realms of Classical physics: Newtonian mechanics",
+  "home_best_sell_product_title_1": "Featured Products",
+  "home_best_sell_product_title_2": "BESTSELLER PRODUCTS",
+  "home_best_sell_product_desc": "Problems trying to resolve the conflict between"
 }

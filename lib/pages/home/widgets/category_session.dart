@@ -4,6 +4,7 @@ import 'package:ecommerce_web_app/commons/utils/extensions.dart';
 import 'package:ecommerce_web_app/pages/home/widgets/category_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategorySession extends StatelessWidget {
   const CategorySession({super.key});
@@ -11,7 +12,7 @@ class CategorySession extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = context.deviceSize.width * 0.5;
-
+    final localization = AppLocalizations.of(context)!;
     return Container(
       height: height,
       color: AppColors.secondaryBackgroundColor,
@@ -19,17 +20,17 @@ class CategorySession extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 250),
         child: Column(
           children: [
-            const Text(
-              "Category",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
+            Text(
+              localization.home_category,
+              style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
             ),
             const SizedBox(
               height: 4,
             ),
-            const Text(
-              "Choose your category here...",
+            Text(
+              localization.home_choose_cate_txt,
               style:
-                  TextStyle(color: AppColors.textSecondaryColor, fontSize: 14),
+                  const TextStyle(color: AppColors.textSecondaryColor, fontSize: 14),
             ),
             const SizedBox(
               height: 50,
@@ -39,27 +40,27 @@ class CategorySession extends StatelessWidget {
               crossAxisCount: 4,
               mainAxisSpacing: 20,
               crossAxisSpacing: 20,
-              children: const [
+              children: [
                 CategoryCard(
-                  name: "MEN",
+                  name: localization.home_men,
                   imagePath: AppImage.cloth1,
                   cellsOfHeight: 2,
                   cellsOfWidth: 2,
                 ),
                 CategoryCard(
-                  name: "WOMEN",
+                  name: localization.home_women,
                   imagePath: AppImage.cloth5,
                   cellsOfHeight: 2,
                   cellsOfWidth: 1,
                 ),
                 CategoryCard(
-                  name: "ACCESSORIES",
+                  name: localization.home_accessories,
                   imagePath: AppImage.cloth3,
                   cellsOfHeight: 1,
                   cellsOfWidth: 1,
                 ),
                 CategoryCard(
-                  name: "KIDS",
+                  name: localization.home_kid,
                   imagePath: AppImage.cloth4,
                   cellsOfHeight: 1,
                   cellsOfWidth: 1,
