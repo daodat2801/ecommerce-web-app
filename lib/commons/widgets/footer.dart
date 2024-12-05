@@ -4,12 +4,14 @@ import 'package:flutter_svg/svg.dart';
 import '../constants/app_svg.dart';
 import 'footer_column.dart';
 import 'footer_subscribe.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -19,8 +21,8 @@ class Footer extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Bandage",
+               Text(
+                 localization.footer_brand,
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -42,63 +44,63 @@ class Footer extends StatelessWidget {
         Container(
           color: AppColors.white,
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 195),
-          child: const Column(
+          child: Column(
             children: [
-              Divider(
+              const Divider(
                 color: AppColors.divider,
                 thickness: 1,
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FooterColumn(
-                    title: "Company Info",
-                    items: ["About Us", "Carrier", "We are hiring", "Blog"],
+                    title: localization.footer_company_info_title,
+                    items: [localization.footer_company_info_about_us, localization.footer_company_info_carrier, localization.footer_company_info_we_are_hiring, localization.footer_company_info_blog],
                   ),
-                  FooterColumn(
-                    title: "Legal",
+                   FooterColumn(
+                    title: localization.footer_legal_title,
                     items: [
-                      "Privacy Policy",
-                      "Terms of Service",
-                      "Disclaimer",
-                      "Cookie Policy"
+                      localization.footer_legal_privacy_policy,
+                      localization.footer_legal_terms_of_service,
+                      localization.footer_legal_disclaimer,
+                      localization.footer_legal_cookie_policy
                     ],
                   ),
-                  FooterColumn(
-                    title: "Features",
+                   FooterColumn(
+                    title: localization.footer_features_title,
                     items: [
-                      "Business Marketing",
-                      "User Analytics",
-                      "Live Chat",
-                      "Unlimited Support"
+                      localization.footer_features_business_marketing,
+                      localization.footer_features_user_analytics,
+                      localization.footer_features_live_chat,
+                      localization.footer_features_unlimited_support
                     ],
                   ),
-                  FooterColumn(
-                    title: "Resources",
+                   FooterColumn(
+                    title:localization.footer_resources_title,
                     items: [
-                      "iOS & Android",
-                      "Watch a Demo",
-                      "Customers",
-                      "API"
+                      localization.footer_resources_ios_android,
+                      localization.footer_resources_watch_a_demo,
+                      localization.footer_resources_customers,
+                      localization.footer_resources_api
                     ],
                   ),
-                  FooterSubscribe(),
+                  const FooterSubscribe(),
                 ],
               ),
-              SizedBox(height: 52),
+              const SizedBox(height: 52),
             ],
           ),
         ),
         Container(
           color: AppColors.secondaryBackgroundColor,
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 195),
-          child: const Row(
+          child:  Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                "Made With Love By Finland All Rights Reserved",
+                localization.footer_made_with_love,
                 style: TextStyle(
                   color: AppColors.textSecondaryColor3,
                   fontSize: 14,

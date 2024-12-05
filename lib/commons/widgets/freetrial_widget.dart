@@ -2,12 +2,15 @@ import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PricingFreetrialWidget extends StatelessWidget {
   //key
   const PricingFreetrialWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Center(
       child: Container(
         height: 582,
@@ -15,9 +18,9 @@ class PricingFreetrialWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Start your 14 days free trial',
-              style: TextStyle(
+            Text(
+              localization.team_start_free_trial,
+              style: const TextStyle(
                 fontSize: 40,
                 height: 50 / 40,
                 fontWeight: FontWeight.w700,
@@ -25,15 +28,15 @@ class PricingFreetrialWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            const SizedBox(
+            SizedBox(
               width: 411,
               height: 40,
               child: Text(
-                'Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent.',
+                localization.team_description,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   height: 20 / 14,
                   letterSpacing: 0.2,
@@ -51,13 +54,13 @@ class PricingFreetrialWidget extends StatelessWidget {
                   color: const Color.fromRGBO(35, 166, 240, 1),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
                       vertical: 15, horizontal: 40), // Added padding
                   child: Center(
                     child: Text(
-                      'Start free trial',
-                      style: TextStyle(
+                      localization.team_start_free_trial_button,
+                      style: const TextStyle(
                         fontSize: 14,
                         height: 22 / 14,
                         letterSpacing: 0.2,

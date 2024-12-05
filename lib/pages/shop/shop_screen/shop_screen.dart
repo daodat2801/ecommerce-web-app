@@ -11,6 +11,7 @@ import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ShopScreen extends ConsumerWidget {
   const ShopScreen({super.key});
@@ -18,6 +19,7 @@ class ShopScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final shopState = ref.watch(ViewModelProvider.shopScreenVMProvider);
+    final localization = AppLocalizations.of(context)!;
 
     ref.read(ViewModelProvider.shopScreenVMProvider.notifier).fetchProducts();
     return Scaffold(
@@ -29,16 +31,16 @@ class ShopScreen extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 195, vertical: 24),
               child: Row(
                 children: [
-                  const Text(
-                    "Shop",
+                   Text(
+                    localization.shop_title,
                     style: TextStyle(
                         fontSize: 24,
                         color: AppColors.textPrimaryColor,
                         fontWeight: FontWeight.w700),
                   ),
                   const Spacer(),
-                  const Text(
-                    "Home",
+                   Text(
+                    localization.shop_home,
                     style: TextStyle(
                         fontSize: 14,
                         color: AppColors.textPrimaryColor,
@@ -47,8 +49,8 @@ class ShopScreen extends ConsumerWidget {
                   const SizedBox(width: 10),
                   SvgPicture.asset(AppSvgs.icArrowRight, width: 9, height: 16),
                   const SizedBox(width: 10),
-                  const Text(
-                    "Shop",
+                   Text(
+                     localization.shop_title,
                     style: TextStyle(
                         fontSize: 14,
                         color: AppColors.textSecondaryColor2,
@@ -63,8 +65,8 @@ class ShopScreen extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    "Showing all 12 results",
+                   Text(
+                     localization.shop_showing_results,
                     style: TextStyle(
                         fontSize: 14,
                         color: AppColors.textSecondaryColor3,
@@ -72,8 +74,8 @@ class ShopScreen extends ConsumerWidget {
                   ),
                   Row(
                     children: [
-                      const Text(
-                        "Views: ",
+                      Text(
+                        "${localization.shop_views}: ",
                         style: TextStyle(
                             fontSize: 14,
                             color: AppColors.textSecondaryColor3,
@@ -115,8 +117,8 @@ class ShopScreen extends ConsumerWidget {
                         ),
                         child: Row(
                           children: [
-                            const Text(
-                              "Popularity",
+                             Text(
+                        localization.shop_popularity,
                               style: TextStyle(
                                   color: AppColors.textSecondaryColor3, fontSize: 14),
                             ),
@@ -135,8 +137,8 @@ class ShopScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(5),
                           ),
                         ),
-                        child: const Text(
-                          "Filter",
+                        child:  Text(
+                          localization.shop_filter,
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                       )

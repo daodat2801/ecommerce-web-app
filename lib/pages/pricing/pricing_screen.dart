@@ -9,6 +9,7 @@ import 'package:ecommerce_web_app/pages/pricing/widgets/pricing_opttion_widget.d
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PricingScreen extends ConsumerWidget {
   //key
@@ -17,6 +18,7 @@ class PricingScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final faqState = ref.watch(ViewModelProvider.faqScreenVMProvider);
     ref.read(ViewModelProvider.faqScreenVMProvider.notifier).fetchFaqs();
+    final localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         title: const Header(),
@@ -42,9 +44,9 @@ class PricingScreen extends ConsumerWidget {
             const BrandsWidget(),
             //PricingOpttionWidget(),
             PricingFaqs(
-                title: "Pricing FAQs",
+                title: localization.faq_title,
                 description:
-                    "Problems trying to resolve the conflict between the two major realms of Classical physics",
+                localization.faq_description,
                 questions: faqState.faqs.isEmpty
                     ? []
                     : faqState.faqs

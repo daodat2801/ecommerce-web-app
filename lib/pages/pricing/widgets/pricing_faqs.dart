@@ -1,5 +1,6 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PricingFaqs extends StatelessWidget {
   final String title;
@@ -15,6 +16,7 @@ class PricingFaqs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Container(
       width: double.infinity,
       height: 700,
@@ -89,9 +91,9 @@ class PricingFaqs extends StatelessWidget {
             },
           ),
           const SizedBox(height: 40),
-          const Text(
-            'Haven’t got your answer? Contact our support',
-            style: TextStyle(
+          Text(
+            localization.support_contact,
+            style: const TextStyle(
               color: AppColors.textSecondaryColor3,
               fontSize: 20,
               fontWeight: FontWeight.w400,

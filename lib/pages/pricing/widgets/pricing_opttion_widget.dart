@@ -2,28 +2,30 @@ import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PricingOpttionWidget extends StatelessWidget {
   //key
   const PricingOpttionWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Center(
       child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-        const Text(
-          'Pricing',
-          style: TextStyle(
+        Text(
+          localization.header_navigation_pricing,
+          style: const TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),
-        const SizedBox(height: 8),
-        const Text(
-          'Problems trying to resolve the conflict between\n'
-          'the two major realms of Classical physics: Newtonian mechanics',
+        const SizedBox(height: 3),
+        Text(
+          localization.main_pricing_description,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             color: AppColors.textSecondaryColor3,
           ),
@@ -33,12 +35,12 @@ class PricingOpttionWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Row(
+              Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Monthly',
-                    style: TextStyle(
+                    localization.main_pricing_billing_monthly,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                       height: 24 / 16,
@@ -46,12 +48,12 @@ class PricingOpttionWidget extends StatelessWidget {
                       color: AppColors.productColorBlack,
                     ),
                   ),
-                  SizedBox(width: 8),
-                  PricingSwitch(),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
+                  const PricingSwitch(),
+                  const SizedBox(width: 8),
                   Text(
-                    'Yearly',
-                    style: TextStyle(
+                    localization.main_pricing_billing_yearly,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                       height: 24 / 16,
@@ -65,16 +67,15 @@ class PricingOpttionWidget extends StatelessWidget {
               Container(
                 height: 44,
                 width: 109,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(37),
                   border: Border.all(color: AppColors.textBlueColor, width: 1),
                 ),
-                child: const Text(
-                  'Save 25%',
-                  style: TextStyle(
+                child: Text(
+                  localization.main_pricing_billing_yearly_discount,
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.primaryBlue,
                     fontWeight: FontWeight.bold,
@@ -91,6 +92,7 @@ class PricingOpttionWidget extends StatelessWidget {
 
 class PricingSwitch extends ConsumerWidget {
   const PricingSwitch({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isYearly = ref.watch(ViewModelProvider.pricingProvider); // Read state
