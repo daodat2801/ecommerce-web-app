@@ -17,6 +17,7 @@ import 'package:go_router/go_router.dart';
 
 class GoRouterManagement {
   GoRouterManagement._();
+  static final navigatorKey = GlobalKey<NavigatorState>();
 
   static GoRouter? _previousRouter;
   static final routerProvider = Provider<GoRouter>((ref) {
@@ -24,6 +25,7 @@ class GoRouterManagement {
     final authenState = ref.watch(authenManagerProvider);
     return _previousRouter = GoRouter(
       initialLocation: _previousRouter?.state?.fullPath,
+      navigatorKey: navigatorKey,
       redirect: (context, state) {
         final isExpired = authenState.user == null;
         final currentRoute = state.fullPath;

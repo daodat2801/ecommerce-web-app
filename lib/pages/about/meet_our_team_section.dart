@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MeetOurTeamSection extends ConsumerWidget {
   const MeetOurTeamSection({super.key});
@@ -13,7 +12,6 @@ class MeetOurTeamSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final meetOurTeamAsync = ref.watch(meetOurTeamProvider);
-    final localization = AppLocalizations.of(context)!;
 
     return meetOurTeamAsync.when(
       data: (meetOurTeam) {
