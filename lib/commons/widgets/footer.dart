@@ -23,7 +23,7 @@ class Footer extends StatelessWidget {
             children: [
                Text(
                  localization.footer_brand,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
                   color: AppColors.textPrimaryColor,
@@ -101,7 +101,7 @@ class Footer extends StatelessWidget {
             children: [
               Text(
                 localization.footer_made_with_love,
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppColors.textSecondaryColor3,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
