@@ -1,22 +1,23 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/commons/constants/app_svg.dart';
+import 'package:ecommerce_web_app/commons/constants/route_path.dart';
+import 'package:ecommerce_web_app/services/authentication_management.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 
-class PricingFreetrialWidget extends StatefulWidget {
+final hoverProvider = StateProvider<bool>((ref) => false);
+
+class PricingFreetrialWidget extends ConsumerWidget {
   const PricingFreetrialWidget({super.key});
 
   @override
-  State<PricingFreetrialWidget> createState() => _PricingFreetrialWidgetState();
-}
-
-class _PricingFreetrialWidgetState extends State<PricingFreetrialWidget> {
-  bool isHovered = false;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final localization = AppLocalizations.of(context)!;
+    final isHovered = ref.watch(hoverProvider);
+    final isLogin = ref.watch(authenManagerProvider).user;
 
     return Center(
       child: Container(
@@ -52,38 +53,44 @@ class _PricingFreetrialWidgetState extends State<PricingFreetrialWidget> {
               ),
             ),
             const SizedBox(height: 24),
-            MouseRegion(
-              onEnter: (_) => setState(() => isHovered = true),
-              onExit: (_) => setState(() => isHovered = false),
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                width: 327,
-                height: 56,
-                decoration: BoxDecoration(
-                  color: isHovered
-                      ? const Color.fromRGBO(30, 150, 220, 1)
-                      : const Color.fromRGBO(35, 166, 240, 1),
-                  borderRadius: BorderRadius.circular(6),
-                  boxShadow: isHovered
-                      ? [
-                          BoxShadow(
-                            color: Colors.blue.withOpacity(0.3),
-                            blurRadius: 10,
-                            spreadRadius: 2,
-                            offset: const Offset(0, 3),
-                          ),
-                        ]
-                      : [],
-                ),
-                child: Center(
-                  child: Text(
-                    localization.team_start_free_trial_button,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      height: 22 / 14,
-                      letterSpacing: 0.2,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+            InkWell(
+              onTap: () => {
+                if (isLogin == null) {context.go(RoutePath.login)
+                }
+              },
+              child: MouseRegion(
+                onEnter: (_) => ref.read(hoverProvider.notifier).state = true,
+                onExit: (_) => ref.read(hoverProvider.notifier).state = false,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  width: 327,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    color: isHovered
+                        ? const Color.fromRGBO(30, 150, 220, 1)
+                        : const Color.fromRGBO(35, 166, 240, 1),
+                    borderRadius: BorderRadius.circular(6),
+                    boxShadow: isHovered
+                        ? [
+                            BoxShadow(
+                              color: Colors.blue.withOpacity(0.3),
+                              blurRadius: 10,
+                              spreadRadius: 2,
+                              offset: const Offset(0, 3),
+                            ),
+                          ]
+                        : [],
+                  ),
+                  child: Center(
+                    child: Text(
+                      localization.team_start_free_trial_button,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        height: 22 / 14,
+                        letterSpacing: 0.2,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
