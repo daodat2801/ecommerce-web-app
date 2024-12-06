@@ -12,7 +12,6 @@ class DisplaySelectLanguageDropdown extends ConsumerWidget {
         ref.watch(ViewModelProvider.headerVMProvider).selectedLanguage;
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: AppColors.primaryBlue,
         borderRadius: BorderRadius.circular(8),

@@ -18,6 +18,7 @@ class _ProductSearchBarState extends State<ProductSearchBar> {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.centerRight,
       children: [
         _buildAnimatedSearchBar(),
         Positioned(
