@@ -67,7 +67,8 @@ class PricingOpttionWidget extends StatelessWidget {
               Container(
                 height: 44,
                 width: 109,
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(37),
@@ -95,10 +96,13 @@ class PricingSwitch extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isYearly = ref.watch(ViewModelProvider.pricingProvider); // Read state
+    final isYearly = ref.watch(ViewModelProvider.pricingScreenVMProvider
+        .select((state) => state.isPricingToggled));
     return InkWell(
       onTap: () {
-        ref.read(ViewModelProvider.pricingProvider.notifier).toggle();
+        ref
+            .read(ViewModelProvider.pricingScreenVMProvider.notifier)
+            .togglePricing();
       },
       child: Container(
         width: 45,

@@ -16,8 +16,8 @@ class PricingScreen extends ConsumerWidget {
   const PricingScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final faqState = ref.watch(ViewModelProvider.faqScreenVMProvider);
-    ref.read(ViewModelProvider.faqScreenVMProvider.notifier).fetchFaqs();
+    final pricingScreenVM = ref.watch(ViewModelProvider.pricingScreenVMProvider);
+    ref.read(ViewModelProvider.pricingScreenVMProvider.notifier).fetchFaqs();
     final localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
@@ -47,9 +47,9 @@ class PricingScreen extends ConsumerWidget {
                 title: localization.faq_title,
                 description:
                 localization.faq_description,
-                questions: faqState.faqs.isEmpty
+                questions: pricingScreenVM.faqState.faqs.isEmpty
                     ? []
-                    : faqState.faqs
+                    : pricingScreenVM.faqState.faqs
                         .map((faq) =>
                             {"question": faq.question, "answer": faq.answer})
                         .toList()),

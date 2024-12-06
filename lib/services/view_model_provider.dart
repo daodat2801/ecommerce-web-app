@@ -38,19 +38,9 @@ class ViewModelProvider {
             ref.read(RepositoryProvider.productDetailRepositoryProvider));
   });
 
-  static final faqScreenVMProvider =
-      StateNotifierProvider<ListFAQs, FAQState>((ref) {
-    return ListFAQs();
-  });
-
-  static final pricingProvider =
-      StateNotifierProvider<PricingStateNotifier, bool>((ref) {
-    return PricingStateNotifier();
-  });
-
-  static final planScreenVMProvider =
-      StateNotifierProvider<ListPlans, PlanState>((ref) {
-    return ListPlans();
+  static final pricingScreenVMProvider =
+      StateNotifierProvider<PricingScreenViewmodel, PricingState>((ref) {
+    return PricingScreenViewmodel();
   });
 
   static final homeScreenVMProvider =

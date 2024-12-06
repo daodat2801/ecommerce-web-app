@@ -8,15 +8,14 @@ class ListItemTypeWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isStatePlan = ref.watch(ViewModelProvider.pricingProvider);
-    final planState = ref.watch(ViewModelProvider.planScreenVMProvider);
-    ref.watch(ViewModelProvider.planScreenVMProvider.notifier).fetchPlans();
+    final pricingState = ref.watch(ViewModelProvider.pricingScreenVMProvider);
+    ref.watch(ViewModelProvider.pricingScreenVMProvider.notifier).fetchPlans();
     return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          if (!isStatePlan)
-            ...planState.plans.map((plan) => ItemTypeWidget(
+          if (!pricingState.isPricingToggled)
+            ...pricingState.planState.plans.map((plan) => ItemTypeWidget(
                   name: plan.name,
                   price: plan.price.toString(),
                   currency: plan.currency,
@@ -26,8 +25,8 @@ class ListItemTypeWidget extends ConsumerWidget {
                   isChoice: plan.name == 'Standard' ? true : false,
                   isFree: plan.name == 'Free' ? true : false,
                 )),
-          if (isStatePlan)
-            ...planState.plans.map((plan) => ItemTypeWidget(
+          if (pricingState.isPricingToggled)
+            ...pricingState.planState.plans.map((plan) => ItemTypeWidget(
                   name: plan.name,
                   price: (plan.price * 12).toString(),
                   currency: plan.currency,
