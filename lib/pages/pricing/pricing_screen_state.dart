@@ -21,3 +21,34 @@ class PlanState{
     return PlanState(plans: plans ?? this.plans);
   }
 }
+class PricingState {
+  final FAQState faqState;
+  final PlanState planState;
+  final bool isPricingToggled;
+
+  PricingState({
+    required this.faqState,
+    required this.planState,
+    required this.isPricingToggled,
+  });
+
+  factory PricingState.initial() {
+    return PricingState(
+      faqState: FAQState.initial(),
+      planState: PlanState.initial(),
+      isPricingToggled: false,
+    );
+  }
+
+  PricingState copyWith({
+    FAQState? faqState,
+    PlanState? planState,
+    bool? isPricingToggled,
+  }) {
+    return PricingState(
+      faqState: faqState ?? this.faqState,
+      planState: planState ?? this.planState,
+      isPricingToggled: isPricingToggled ?? this.isPricingToggled,
+    );
+  }
+}
