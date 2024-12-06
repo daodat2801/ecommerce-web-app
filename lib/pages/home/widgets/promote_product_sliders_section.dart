@@ -40,7 +40,7 @@ class _PromoteProductSlidersSectionState
         CarouselSlider(
           items: _products.map((product) {
             return Container(
-              color: AppColors.textRedColor,
+              color: AppColors.primaryBlue,
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 209, vertical: 50),

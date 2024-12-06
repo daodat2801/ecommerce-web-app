@@ -3,17 +3,20 @@ import 'package:ecommerce_web_app/commons/utils/app_alerts.dart';
 import 'package:ecommerce_web_app/commons/widgets/common_text_field.dart';
 import 'package:ecommerce_web_app/models/user.dart';
 import 'package:ecommerce_web_app/services/authentication_management.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginScreen extends ConsumerWidget {
+  
   LoginScreen({super.key});
   final userNameTextController = TextEditingController();
   final passWordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final localization = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -37,32 +40,32 @@ class LoginScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                "Sign In",
-                style: TextStyle(
+              Text(
+               localization.login_title,
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: Color(0xFF252B42),
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                "Let's build something great",
-                style: TextStyle(
+              Text(
+                localization.login_description,
+                style:const TextStyle(
                   fontSize: 14,
                   color: Color(0xFF737373),
                 ),
               ),
               const SizedBox(height: 30),
               CommonTextField(
-                title: "E-mail or phone number",
-                hintText: "Enter your email or phone number",
+                title: localization.login_title_username,
+                hintText: localization.login_hint_username,
                 controller: userNameTextController,
               ),
               const SizedBox(height: 20),
               CommonTextField(
-                title: "Password",
-                hintText: "Enter your password",
+                title: localization.login_title_password,
+                hintText: localization.login_hint_password,
                 obscureText: true,
                 controller: passWordTextController,
                 suffixIcon: const Icon(
@@ -82,9 +85,9 @@ class LoginScreen extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
-                child: const Text(
-                  "Login",
-                  style: TextStyle(
+                child:Text(
+                  localization.login,
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
@@ -96,9 +99,9 @@ class LoginScreen extends ConsumerWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(
+                  child: Text(
+                    localization.login_forgot_password,
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Color(0xFF009EF7),
                       fontWeight: FontWeight.w400,
@@ -110,9 +113,9 @@ class LoginScreen extends ConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Don't have an account? ",
-                    style: TextStyle(
+                  Text(
+                   localization.login_not_have_account,
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Color(0xFF282828),
                       fontWeight: FontWeight.w400,
@@ -120,9 +123,9 @@ class LoginScreen extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {},
-                    child: const Text(
-                      "Sign up",
-                      style: TextStyle(
+                    child: Text(
+                      localization.login_sign_up,
+                      style: const  TextStyle(
                         fontSize: 14,
                         color: Color(0xFF009EF7),
                         fontWeight: FontWeight.w400,
