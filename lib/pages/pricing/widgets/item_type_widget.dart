@@ -1,8 +1,8 @@
 import 'package:ecommerce_web_app/commons/constants/app_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ItemTypeWidget extends ConsumerWidget {
+class ItemTypeWidget extends StatefulWidget {
   final String name;
   final String price;
   final String currency;
@@ -18,6 +18,7 @@ class ItemTypeWidget extends ConsumerWidget {
     "Email and community support",
     "Many Thing"
   ];
+
   const ItemTypeWidget({
     super.key,
     required this.name,
@@ -31,13 +32,23 @@ class ItemTypeWidget extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _ItemTypeWidgetState createState() => _ItemTypeWidgetState();
+}
+
+class _ItemTypeWidgetState extends State<ItemTypeWidget>
+    with SingleTickerProviderStateMixin {
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: 327,
-      height: isChoice == false ? 664 : 700,
+      height: widget.isChoice == false ? 664 : 700,
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
       decoration: BoxDecoration(
-        color: isChoice == false ? Colors.white : AppColors.productColorBlack,
+        color: widget.isChoice == false
+            ? Colors.white
+            : AppColors.productColorBlack,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: AppColors.primaryBlue,
@@ -55,9 +66,9 @@ class ItemTypeWidget extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            name,
+            widget.name,
             style: TextStyle(
-              color: isChoice == false
+              color: widget.isChoice == false
                   ? AppColors.productColorBlack
                   : Colors.white,
               fontSize: 24,
@@ -74,7 +85,7 @@ class ItemTypeWidget extends ConsumerWidget {
                 fontSize: 16,
                 height: 24 / 14,
                 letterSpacing: 0.1,
-                color: isChoice == false
+                color: widget.isChoice == false
                     ? AppColors.textMediumGrayColor
                     : Colors.white),
           ),
@@ -83,7 +94,7 @@ class ItemTypeWidget extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                price,
+                widget.price,
                 style: const TextStyle(
                   color: AppColors.primaryBlue,
                   fontSize: 40,
@@ -97,7 +108,7 @@ class ItemTypeWidget extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    currency,
+                    widget.currency,
                     style: const TextStyle(
                       color: AppColors.primaryBlue,
                       fontSize: 24,
@@ -107,7 +118,7 @@ class ItemTypeWidget extends ConsumerWidget {
                     ),
                   ),
                   Text(
-                    period,
+                    widget.period,
                     style: const TextStyle(
                         fontSize: 14,
                         height: 22 / 16,
@@ -120,13 +131,13 @@ class ItemTypeWidget extends ConsumerWidget {
           ),
           const SizedBox(height: 16),
           const SizedBox(height: 16),
-          ...defaultFeatures.map((defaultFeature) => Padding(
+          ...ItemTypeWidget.defaultFeatures.map((defaultFeature) => Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Row(
                   children: [
                     Icon(
                       Icons.check_circle,
-                      color: features.contains(defaultFeature)
+                      color: widget.features.contains(defaultFeature)
                           ? Colors.green
                           : AppColors.textSecondaryColor2,
                     ),
@@ -135,7 +146,7 @@ class ItemTypeWidget extends ConsumerWidget {
                       child: Text(
                         defaultFeature,
                         style: TextStyle(
-                          color: isChoice == false
+                          color: widget.isChoice == false
                               ? AppColors.productColorBlack
                               : Colors.white,
                           fontSize: 16,
@@ -146,27 +157,33 @@ class ItemTypeWidget extends ConsumerWidget {
                 ),
               )),
           const SizedBox(height: 16),
-          InkWell(
-            onTap: () {},
-            child: Container(
+          MouseRegion(
+            onEnter: (_) => setState(() => isHovered = true),
+            onExit: (_) => setState(() => isHovered = false),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
               width: 246,
               height: 52,
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
               decoration: BoxDecoration(
-                color: isFree == true
-                    ? AppColors.productColorBlack
-                    : AppColors.primaryBlue,
+                color: isHovered
+                    ? AppColors.textSecondaryColor2.withOpacity(0.99)
+                    : widget.isFree == true
+                        ? AppColors.productColorBlack
+                        : AppColors.primaryBlue,
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: const Text(
-                'Try for free',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 0.2,
-                  fontWeight: FontWeight.bold,
-                  height: 22 / 14,
-                  fontSize: 14,
+              child: Center(
+                child: Text(
+                  AppLocalizations.of(context)!.freetrial_button,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    letterSpacing: 0.2,
+                    fontWeight: FontWeight.bold,
+                    height: 22 / 14,
+                    fontSize: 14,
+                  ),
                 ),
               ),
             ),
