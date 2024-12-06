@@ -8,7 +8,6 @@ import 'package:ecommerce_web_app/pages/home/widgets/promote_product_section.dar
 import 'package:ecommerce_web_app/pages/home/widgets/promote_product_sliders_section.dart';
 import 'package:ecommerce_web_app/services/view_model_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -23,37 +22,12 @@ class HomeScreen extends ConsumerWidget {
         child: Column(
           children: [
             const Header(isExpanded: true),
-            FadeInDown(
-              globalKey: GlobalKey(),
-              delay: 200.ms,
-              child: const BackgroundCard(),
-            ),
-            FadeInUp(
-              globalKey: GlobalKey(),
-              delay: 200.ms,
-              child: const CategorySession(),
-            ),
-            FadeInLeft(
-              globalKey: GlobalKey(),
-              delay: 200.ms,
-              child: BestSellProductSession(products: homeState.products),
-            ),
-            FadeInRight(
-              globalKey: GlobalKey(),
-              delay: 200.ms,
-              repeat: true,
-              child: const PromoteProductSlidersSection(),
-            ),
-            FadeInLeft(
-              globalKey: GlobalKey(),
-              delay: 200.ms,
-              child: const PromoteProductSection(),
-            ),
-            FadeInRight(
-              globalKey: GlobalKey(),
-              delay: 200.ms,
-              child: const FeaturePostsSection(),
-            ),
+            const BackgroundCard(),
+            const CategorySession(),
+            BestSellProductSession(products: homeState.products),
+            const PromoteProductSlidersSection(),
+            const PromoteProductSection(),
+            const FeaturePostsSection(),
             const Footer(),
           ],
         ),
