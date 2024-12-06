@@ -3,6 +3,7 @@ import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/services/about_us_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CallToActionSection extends ConsumerWidget {
   const CallToActionSection({super.key});
@@ -10,6 +11,7 @@ class CallToActionSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final callToActionAsync = ref.watch(callToActionProvider);
+    final localization = AppLocalizations.of(context)!;
 
     return callToActionAsync.when(
       data: (callToAction) {
@@ -42,9 +44,9 @@ class CallToActionSection extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    const Text(
-                      "The gradual accumulation of information about atomic and \nsmall-scale behavior during the first quarter of the 20th ",
-                      style: TextStyle(
+                    Text(
+                      localization.about_work_about_us_description,
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: AppColors.white,
