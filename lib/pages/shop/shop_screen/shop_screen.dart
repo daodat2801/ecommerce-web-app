@@ -28,20 +28,21 @@ class ShopScreen extends ConsumerWidget {
           children: [
             const Header(isExpanded: true),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 195, vertical: 24),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 195, vertical: 24),
               child: Row(
                 children: [
-                   Text(
+                  Text(
                     localization.shop_title,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 24,
                         color: AppColors.textPrimaryColor,
                         fontWeight: FontWeight.w700),
                   ),
                   const Spacer(),
-                   Text(
+                  Text(
                     localization.shop_home,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 14,
                         color: AppColors.textPrimaryColor,
                         fontWeight: FontWeight.w700),
@@ -49,9 +50,9 @@ class ShopScreen extends ConsumerWidget {
                   const SizedBox(width: 10),
                   SvgPicture.asset(AppSvgs.icArrowRight, width: 9, height: 16),
                   const SizedBox(width: 10),
-                   Text(
-                     localization.shop_title,
-                    style: TextStyle(
+                  Text(
+                    localization.shop_title,
+                    style: const TextStyle(
                         fontSize: 14,
                         color: AppColors.textSecondaryColor2,
                         fontWeight: FontWeight.w700),
@@ -61,13 +62,14 @@ class ShopScreen extends ConsumerWidget {
             ),
             const CategoryList(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 195, vertical: 24),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 195, vertical: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   Text(
-                     localization.shop_showing_results,
-                    style: TextStyle(
+                  Text(
+                    localization.shop_showing_results,
+                    style: const TextStyle(
                         fontSize: 14,
                         color: AppColors.textSecondaryColor3,
                         fontWeight: FontWeight.w700),
@@ -76,7 +78,7 @@ class ShopScreen extends ConsumerWidget {
                     children: [
                       Text(
                         "${localization.shop_views}: ",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 14,
                             color: AppColors.textSecondaryColor3,
                             fontWeight: FontWeight.w700),
@@ -90,7 +92,8 @@ class ShopScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(5),
                           ),
                         ),
-                        child: SvgPicture.asset(AppSvgs.iconList2, width: 16, height: 16),
+                        child: SvgPicture.asset(AppSvgs.iconList2,
+                            width: 16, height: 16),
                       ),
                       const SizedBox(width: 15),
                       OutlinedButton(
@@ -101,7 +104,8 @@ class ShopScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(5),
                           ),
                         ),
-                        child: SvgPicture.asset(AppSvgs.iconList, width: 16, height: 16),
+                        child: SvgPicture.asset(AppSvgs.iconList,
+                            width: 16, height: 16),
                       )
                     ],
                   ),
@@ -117,10 +121,11 @@ class ShopScreen extends ConsumerWidget {
                         ),
                         child: Row(
                           children: [
-                             Text(
-                        localization.shop_popularity,
-                              style: TextStyle(
-                                  color: AppColors.textSecondaryColor3, fontSize: 14),
+                            Text(
+                              localization.shop_popularity,
+                              style: const TextStyle(
+                                  color: AppColors.textSecondaryColor3,
+                                  fontSize: 14),
                             ),
                             const SizedBox(width: 10),
                             SvgPicture.asset(AppSvgs.icArrowDown, width: 14),
@@ -129,17 +134,17 @@ class ShopScreen extends ConsumerWidget {
                       ),
                       const SizedBox(width: 15),
                       ElevatedButton(
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                           ),
                         ),
-                        child:  Text(
+                        child: Text(
                           localization.shop_filter,
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 16),
                         ),
                       )
                     ],

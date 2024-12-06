@@ -31,7 +31,7 @@ class TeamScreen extends ConsumerWidget {
             const SizedBox(height:112),
              Text(localization.team_meet_our_team,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 40,
               height: 50/40,
               fontWeight: FontWeight.w700,
