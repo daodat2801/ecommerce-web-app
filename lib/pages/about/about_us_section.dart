@@ -3,6 +3,7 @@ import 'package:ecommerce_web_app/commons/constants/app_img.dart';
 import 'package:ecommerce_web_app/services/about_us_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutUsSection extends ConsumerWidget {
   const AboutUsSection({super.key});
@@ -10,6 +11,7 @@ class AboutUsSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final aboutUsAsync = ref.watch(aboutUsProvider);
+    final localization = AppLocalizations.of(context)!;
 
     return aboutUsAsync.when(
       data: (aboutUs) {
@@ -22,9 +24,9 @@ class AboutUsSection extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'ABOUT COMPANY',
-                      style: TextStyle(
+                    Text(
+                      aboutUs.title,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.textPrimaryColor,
                         fontWeight: FontWeight.w700,
@@ -40,9 +42,9 @@ class AboutUsSection extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 35),
-                    const Text(
-                      "We know how large objects will act, \nbut things on a small scale",
-                      style: TextStyle(
+                    Text(
+                      localization.about_description,
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textMediumGrayColor,

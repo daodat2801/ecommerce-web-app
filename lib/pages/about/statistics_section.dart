@@ -2,6 +2,7 @@ import 'package:ecommerce_web_app/commons/constants/app_color.dart';
 import 'package:ecommerce_web_app/services/about_us_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class StatisticsSection extends ConsumerWidget {
   const StatisticsSection({super.key});
@@ -9,6 +10,7 @@ class StatisticsSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final statisticsAsync = ref.watch(statisticsProvider);
+    final localization = AppLocalizations.of(context)!;
 
     return statisticsAsync.when(
       data: (statistics) {
@@ -18,7 +20,7 @@ class StatisticsSection extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -27,17 +29,17 @@ class StatisticsSection extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Problems trying",
-                          style: TextStyle(
+                          localization.about_problem,
+                          style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: AppColors.textRedColor,
                           ),
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                         Text(
-                          "Met minim Mollie non desert\nAlamo est sit cliquey dolor do \nmet sent.",
-                          style: TextStyle(
+                          localization.about_problem_description,
+                          style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                             color: AppColors.productColorBlack,
@@ -46,11 +48,11 @@ class StatisticsSection extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Expanded(
                     child: Text(
-                      "Problems trying to resolve the conflict between the two major realms of\nClassical physics: Newtonian mechanics.",
-                      style: TextStyle(
+                      localization.about_problem_resolve,
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textSecondaryColor3,
@@ -65,19 +67,19 @@ class StatisticsSection extends ConsumerWidget {
                 children: [
                   StatisticItem(
                     number: statistics.happyCustomers,
-                    description: "Happy Customers",
+                    description: localization.about_happy_customer,
                   ),
                   StatisticItem(
                     number: statistics.monthlyVisitors,
-                    description: "Monthly Visitors",
+                    description: localization.about_monthly_visitors,
                   ),
                   StatisticItem(
                     number: statistics.countriesWorldwide,
-                    description: "Countries Worldwide",
+                    description: localization.about_countries_worldwide,
                   ),
                   StatisticItem(
                     number: statistics.topPartners,
-                    description: "Top Partners",
+                    description: localization.about_top_partners,
                   ),
                 ],
               ),
